@@ -44,6 +44,6 @@ Base.length(pf::PatternFold) = pattern_length(pf) * folds(pf)
     rand(pf<:PatternFold)
 Returns a random value of `pf` as if it was unfolded.
 """
-function rand(pf::PF) where {PF <: PatternFold}
-    return rand(pattern(pf)) + rand(0:(folds(pf) - 1)) * gap(pf)
+function Base.rand(pf::PF) where {PF <: PatternFold}
+    return Base.rand(pattern(pf)) + Base.rand(0:(folds(pf) - 1)) * gap(pf)
 end
