@@ -4,3 +4,10 @@
 /Manifest.toml
 /docs/build/
 /docs/Manifest.toml
+
+# IDE and Editors
+.vscode/
+.idea/
+
+# MACOS Files and Property file
+.DS_Store
