@@ -20,7 +20,7 @@ pattern(vf, index) = pattern(vf)[index]
     unfold(vf::VectorFold; from=1, to=folds(vf))
 Construct the unfolded version of `vf` (with the same type as `pattern(vf)`) based. Please note that using an iterator on `vf` avoid memory allocation, which is not the case of `unfold`.
 """
-function unfold(vf::VectorFold; from=1, to=folds(vf))
+function unfold(vf; from=1, to=folds(vf))
     pl = pattern_length(vf)
     ul = (to - from + 1) * pl
     v = typeof(pattern(vf))(undef, ul)
@@ -41,7 +41,7 @@ Base.iterate(iter::VectorFold) = (pattern(iter, 1), 1)
 # "Induction" iterate method
 function Base.iterate(iter::VectorFold, state::Int)
     state ≥ length(iter) && return nothing
-	
+
 	next_state = state + 1
     pl = pattern_length(iter)
 
@@ -53,9 +53,11 @@ function Base.iterate(iter::VectorFold, state::Int)
 end
 
 # Reverse iterate method
-function Base.iterate(r_iter::Base.Iterators.Reverse{VectorFold{T,V}}, state::Int = length(r_iter.itr)) where {T,V}
+function Base.iterate(r_iter::Base.Iterators.Reverse{VectorFold{T,V}},
+    state::Int = length(r_iter.itr)
+) where {T,V}
 	state < 1 && return nothing
-	
+
 	next_state = state - 1
 	iter = r_iter.itr
     pl = pattern_length(iter)
