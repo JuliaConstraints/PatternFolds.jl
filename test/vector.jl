@@ -16,5 +16,9 @@
         @test length(vf) == results[:length]
         @test unfold(vf) == results[:unfold]
     end
+    
+    @test collect(VectorFold([1, 2], 10, 5)) == [i for i in VectorFold([1, 2], 10, 5)] == unfold(VectorFold([1, 2], 10, 5))
+    @test collect(Iterators.reverse(VectorFold([1, 2], 10, 5))) == reverse(collect(VectorFold([1, 2], 10, 5)))
+    @test 41 ∈ VectorFold([1, 2], 10, 5)
 
 end
