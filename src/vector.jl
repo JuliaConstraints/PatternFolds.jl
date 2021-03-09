@@ -36,27 +36,33 @@ function unfold(vf::VectorFold; from=1, to=folds(vf))
 end
 
 # Base case iterate method
-function Base.iterate(iter::VectorFold)
-    if any(isempty.((pattern(iter), gap(iter), folds(iter))))
-		return nothing
-	end
-
-    return first(pattern(iter)), 0
-end
+Base.iterate(iter::VectorFold) = (pattern(iter, 1), 1)
 
 # "Induction" iterate method
 function Base.iterate(iter::VectorFold, state::Int)
-    state += 1
-
-    if state >= length(iter)
-        return nothing
-    end
-
+    state ≥ length(iter) && return nothing
+	
+	next_state = state + 1
     pl = pattern_length(iter)
 
-	pattern_counter = mod1(state + 1, pl)
+	pattern_counter = mod1(next_state, pl)
 	fold_counter = state ÷ pl
 	elem = pattern(iter, pattern_counter) + (fold_counter * gap(iter))
 
-	return elem, state
+	return elem, next_state
+end
+
+# Reverse iterate method
+function Base.iterate(r_iter::Base.Iterators.Reverse{VectorFold{T,V}}, state::Int = length(r_iter.itr)) where {T,V}
+	state < 1 && return nothing
+	
+	next_state = state - 1
+	iter = r_iter.itr
+    pl = pattern_length(iter)
+
+	pattern_counter = mod1(state, pl)
+	fold_counter = next_state ÷ pl
+	elem = pattern(iter, pattern_counter) + (fold_counter * gap(iter))
+
+	return elem, next_state
 end

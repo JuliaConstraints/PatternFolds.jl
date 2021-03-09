@@ -43,7 +43,7 @@ Base.length(pf::PatternFold) = pattern_length(pf) * folds(pf)
 """
     eltype(pf<: PatternFolds)
 """
-Base.eltype(_::Type{<:PatternFold{T,P}}) where {T,P} = T
+Base.eltype(::Type{<:PatternFold{T,P}}) where {T,P} = T
 
 """
     rand(pf<:PatternFold)
