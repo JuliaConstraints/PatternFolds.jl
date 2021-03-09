@@ -1,6 +1,7 @@
 module PatternFolds
 
-import Base.length, Base.rand, Base.iterate
+import Base: length, rand, iterate, isempty, ndims
+import Lazy: @forward
 
 # exports
 export PatternFold, VectorFold, MVectorFold
