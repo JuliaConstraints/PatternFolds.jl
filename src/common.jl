@@ -2,7 +2,7 @@
     PatternFold{T, P}
 An abstract stype used as an interface for folded patterns such as `VectorFold`.
 To implement the interface and inherit from it, a new structure must define three fields:
-- `pattern::P`. Note that both `length(::P)` and `rand(:P)` methods must be available
+- `pattern::P`. Note that both `length(::P)` and `rand(::P)` methods must be available
 - `gap::T`
 - `folds::int`
 """
@@ -25,6 +25,9 @@ gap(pf) = pf.gap
 Return the number of *folds*. An infinite folded pattern returns `0`.
 """
 folds(pf) = pf.folds
+
+# Forwards isempty, ndims
+@forward PatternFold.pattern isempty, ndims
 
 # TODO - look if another name is more appropriate
 """
