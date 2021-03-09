@@ -47,14 +47,16 @@ end
 # "Induction" iterate method
 function Base.iterate(iter::VectorFold, state::Int)
     state += 1
-		
+
     if state >= length(iter)
         return nothing
     end
-	
-	pattern_counter = mod1(state + 1, length(pattern(iter)))
-	fold_counter = state ÷ length(pattern(iter))
-	elem = pattern(iter)[pattern_counter] + (fold_counter * gap(iter))
-		
+
+    pl = pattern_length(iter)
+
+	pattern_counter = mod1(state + 1, pl)
+	fold_counter = state ÷ pl
+	elem = pattern(iter, pattern_counter) + (fold_counter * gap(iter))
+
 	return elem, state
 end
