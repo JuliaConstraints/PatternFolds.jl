@@ -45,3 +45,7 @@ function Base.iterate(iter::MVectorFold, state::Int)
 
 	return elem, next_state
 end
+
+function Base.rand(mvf::MVectorFold)
+    return Base.rand(mvf.pattern) + Base.rand((1 - mvf.current):(folds(mvf) - mvf.current)) * gap(mvf)
+end
