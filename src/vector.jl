@@ -48,7 +48,7 @@ end
 function Base.iterate(iter::VectorFold, state::Int)
     state += 1
 		
-    if state > length(iter)
+    if state >= length(iter)
         return nothing
     end
 	
