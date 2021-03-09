@@ -41,6 +41,11 @@ Return the length of `pf` if unfolded.
 Base.length(pf::PatternFold) = pattern_length(pf) * folds(pf)
 
 """
+    eltype(pf<: PatternFolds)
+"""
+Base.eltype(_::PatternFold{T,P}) where {T,P} = T
+
+"""
     rand(pf<:PatternFold)
 Returns a random value of `pf` as if it was unfolded.
 """

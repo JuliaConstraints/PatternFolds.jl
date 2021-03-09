@@ -1,6 +1,6 @@
 module PatternFolds
 
-import Base.length, Base.rand
+import Base.length, Base.rand, Base.iterate
 
 # exports
 export PatternFold, VectorFold

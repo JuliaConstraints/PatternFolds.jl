@@ -1,4 +1,3 @@
-
 """
     VectorFold{T,V <: AbstractVector{T}}
 A folded vector structure that extends the methods of AbstractVector to a folded structure.
@@ -34,4 +33,28 @@ function unfold(vf::VectorFold; from=1, to=folds(vf))
         count += 1
     end
     return v
+end
+
+# Base case iterate method
+function Base.iterate(iter::VectorFold)
+    if any(isempty.((pattern(iter), gap(iter), folds(iter))))
+		return nothing
+	end
+
+    return first(pattern(iter)), 0
+end
+
+# "Induction" iterate method
+function Base.iterate(iter::VectorFold, state::Int)
+    state += 1
+		
+    if state > length(iter)
+        return nothing
+    end
+	
+	pattern_counter = mod1(state + 1, length(pattern(iter)))
+	fold_counter = state ÷ length(pattern(iter))
+	elem = pattern(iter)[pattern_counter] + (fold_counter * gap(iter))
+		
+	return elem, state
 end
