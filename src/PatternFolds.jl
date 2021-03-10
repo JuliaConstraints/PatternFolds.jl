@@ -11,6 +11,6 @@ export length, unfold
 # includes
 include("common.jl")
 include("vector.jl")
-include("mutable.jl")
+include("mutable_vector.jl")
 
 end
