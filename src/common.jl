@@ -40,7 +40,6 @@ pattern_length(pf) = length(pattern(pf))
     length(pf<:PatternFold)
 Return the length of `pf` if unfolded.
 """
-
 Base.length(pf::PatternFold) = pattern_length(pf) * folds(pf)
 
 """

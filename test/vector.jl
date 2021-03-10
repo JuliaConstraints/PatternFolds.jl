@@ -6,6 +6,7 @@
             :folds => 5,
             :length => 10,
             :unfold => [1,2,11,12,21,22,31,32,41,42],
+            :reverse => reverse([1,2,11,12,21,22,31,32,41,42]),
         ),
         MVectorFold([1,2], 10, 5) => Dict(
             :pattern => [1,2],
@@ -13,6 +14,7 @@
             :folds => 5,
             :length => 10,
             :unfold => [1,2,11,12,21,22,31,32,41,42],
+            :reverse => reverse([1,2,11,12,21,22,31,32,41,42]),
         ),
     ])
 
@@ -24,10 +26,9 @@
         @test unfold(vf) == results[:unfold]
         @test ndims(vf) == 1
         @test rand(vf) ∈ vf
+        @test collect(vf) == [i for i in vf] == unfold(vf)
+        @test collect(Iterators.reverse(vf)) == reverse(collect(vf))
     end
-
-    @test collect(VectorFold([1, 2], 10, 5)) == [i for i in VectorFold([1, 2], 10, 5)] == unfold(VectorFold([1, 2], 10, 5))
-    @test collect(Iterators.reverse(VectorFold([1, 2], 10, 5))) == reverse(collect(VectorFold([1, 2], 10, 5)))
-    @test 41 ∈ VectorFold([1, 2], 10, 5)
     @test isempty(VectorFold(Vector(),1,1))
+    @test isempty(MVectorFold(Vector(),1,1))
 end
