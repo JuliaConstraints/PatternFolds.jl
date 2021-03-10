@@ -48,6 +48,7 @@ IntervalsFold(p, g, f, c = 1) = IntervalsFold(p, g, f, c)
 @forward IntervalsFold.pattern a, b
 
 function unfold(isf::IntervalsFold)
+    reset_pattern!(isf)
     x, y = a(isf), b(isf)
     g = gap(isf)
     f = folds(isf)
@@ -70,19 +71,16 @@ end
 # "Induction" iterate method
 function Base.iterate(iter::IntervalsFold, state::Int)
     state ≥ folds(iter) && return nothing
-    set_fold!(iter, state)
-	next_state = state + 1
-	elem = pattern(iter)
-	return elem, next_state
+    set_fold!(iter)
+	return iter.pattern, state + 1
 end
 
 # Reverse iterate method
 function Base.iterate(r_iter::Base.Iterators.Reverse{IntervalsFold{T}},
     state::Int = length(r_iter.itr)) where {T}
 	state < 1 && return nothing
-	next_state = state - 1
 	iter = r_iter.itr
-	elem = pattern(iter)
+    next_state = state - 1
     set_fold!(iter, next_state)
-	return elem, next_state
+	return  iter.pattern, next_state
 end

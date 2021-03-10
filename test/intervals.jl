@@ -22,6 +22,6 @@
         @test length(isf) == results[:length]
         @test unfold(isf) == results[:unfold]
         @test ndims(isf) == 1
-        # @test rand(isf) ∈ isf
+        @test rand(isf) ∈ isf
     end
 end
