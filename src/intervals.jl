@@ -32,7 +32,7 @@ end
 
 Base.length(i::Interval) = 1
 Base.size(i::Interval) = value(i, :b) - value(i, :a)
-Base.isempty(i::Interval) = lenght(i) == 0 && (opened(i, :a) || opened(i, :b))
+Base.isempty(i::Interval) = size(i) == 0 && (opened(i, :a) || opened(i, :b))
 Base.ndims(::Interval) = 1
 Base.rand(i::Interval) = rand() * length(i) + value(i, :a)
 
@@ -45,7 +45,7 @@ end
 
 IntervalsFold(p, g, f, c = 1) = IntervalsFold(p, g, f, c)
 
-@forward IntervalsFold.pattern a, b
+@forward IntervalsFold.pattern a, b, isempty
 
 function pattern(isf::IntervalsFold)
     distortion = gap(isf) * (isf.current - 1)
@@ -97,7 +97,4 @@ end
 
 Base.size(isf::IntervalsFold) = size(isf.pattern) * folds(isf)
 
-"""
-    eltype(pf<: PatternFolds)
-"""
 Base.eltype(::Type{<:IntervalsFold{T}}) where {T} = Interval{T}

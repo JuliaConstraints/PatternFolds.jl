@@ -35,4 +35,5 @@
         @test collect(isf) == [i for i in isf] == unfold(isf)
         @test collect(Iterators.reverse(isf)) == reverse(collect(isf)) == results[:reverse]
     end
+    @test isempty(IntervalsFold(Interval((1.0,false),(1.0,true)), 1.0, 1))
 end
