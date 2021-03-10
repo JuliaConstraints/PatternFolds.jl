@@ -4,7 +4,8 @@
             :pattern => Interval((0.0, true), (1.0, false)),
             :gap => 2.0,
             :folds => 5,
-            :length => 5.0,
+            :length => 5,
+            :size => 5.0,
             :unfold => [
                 Interval{Float64}((0.0, true), (1.0, false)),
                 Interval{Float64}((2.0, true), (3.0, false)),
@@ -27,6 +28,7 @@
         @test gap(isf) == results[:gap]
         @test folds(isf) == results[:folds]
         @test length(isf) == results[:length]
+        @test size(isf) == results[:size]
         @test unfold(isf) == results[:unfold]
         @test ndims(isf) == 1
         @test rand(isf) ∈ isf
