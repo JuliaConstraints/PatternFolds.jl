@@ -15,13 +15,6 @@ b(i) = i.b
 +(bound::Tuple{T, Bool}, gap::T) where T = bound[1]+gap, bound[2]
 +(i::Interval, gap) = Interval(a(i) + gap, b(i) + gap)
 
-function Base.in(value, i::Interval)
-    x, y = value(i, :a), value(i, :b)
-    lesser = closed(i, :a) ? x ≤ value : x < value
-    greater = closed(i, :b) ? x ≥ value : x > value
-    return lesser && greater
-end
-
 value(i, ::Val{:a}) = i.a[1]
 value(i, ::Val{:b}) = i.b[1]
 value(i, bound) = value(i, Val(bound))
@@ -30,6 +23,13 @@ closed(i, ::Val{:a}) = i.a[2]
 closed(i, ::Val{:b}) = i.b[2]
 closed(i, bound) = closed(i, Val(bound))
 opened(i, bound) = !closed(i, bound)
+
+function Base.in(val, i::Interval)
+    (x, y) = (value(i, :a), value(i, :b))
+    lesser = closed(i, :a) ? x ≤ val : x < val
+    greater = closed(i, :b) ? y ≥ val : y > val
+    return lesser && greater
+end
 
 Base.length(i::Interval) = value(i, :b) - value(i, :a)
 Base.isempty(i::Interval) = lenght(i) == 0 && (opened(i, :a) || opened(i, :b))
@@ -81,8 +81,20 @@ function Base.iterate(r_iter::Base.Iterators.Reverse{IntervalsFold{T}},
 	state < 1 && return nothing
 	iter = r_iter.itr
     next_state = state - 1
-    set_fold!(iter, next_state)
+    set_fold!(iter, state)
 	return  iter.pattern, next_state
 end
 
-Base.in(val, isf::IntervalsFold) = any(i -> val ∈ i, isf)
+function Base.in(val, isf::IntervalsFold)
+    reset_pattern!(isf)
+    return any(i -> val ∈ i, isf)
+end
+
+pattern_length(isf, ::Val{:length}) = length(pattern(isf))
+pattern_length(isf, ::Val{:size}) = 1
+pattern_length(isf::IntervalsFold; kind = :size) = pattern_length(isf, Val(kind))
+
+"""
+    eltype(pf<: PatternFolds)
+"""
+Base.eltype(::Type{<:IntervalsFold{T}}) where {T} = Interval{T}
