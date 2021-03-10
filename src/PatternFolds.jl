@@ -1,6 +1,6 @@
 module PatternFolds
 
-import Base: length, rand, iterate, isempty, ndims, +, in
+import Base: length, rand, iterate, isempty, ndims, +, in, size
 import Lazy: @forward
 
 # exports
