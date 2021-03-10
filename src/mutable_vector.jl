@@ -84,7 +84,9 @@ function Base.rand(mvf::MVectorFold)
 end
 
 # Specific dispatch for MVectorFold
-function unfold(mvf::MVectorFold; from=1, to=folds(mvf))
-    reset_pattern!(mvf)
-    return unfold(mvf,from, to)
+function unfold(mvf::MVectorFold
+    # ; from=1, to=folds(mvf)
+    )
+    # reset_pattern!(mvf)
+    return collect(mvf)
 end

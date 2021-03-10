@@ -20,9 +20,7 @@ pattern(vf, index) = pattern(vf)[index]
     unfold(vf::VectorFold; from=1, to=folds(vf))
 Construct the unfolded version of `vf` (with the same type as `pattern(vf)`) based. Please note that using an iterator on `vf` avoid memory allocation, which is not the case of `unfold`.
 """
-unfold(vf::VectorFold; from=1, to=folds(vf)) = unfold(vf, from, to)
-
-function unfold(vf, from, to)
+function unfold(vf::VectorFold; from=1, to=folds(vf))
     pl = pattern_length(vf)
     ul = (to - from + 1) * pl
     v = typeof(pattern(vf))(undef, ul)
