@@ -22,12 +22,6 @@ end
 pattern(mvf::MVectorFold, index) = pattern(mvf)[index]
 
 """
-    reset_pattern!(::MVectorFold)
-Reset the *unfolded* pattern to the first fold.
-"""
-reset_pattern!(mvf) = set_fold!(mvf, 1)
-
-"""
     set_fold!(mvf::MVectorFold, new_fold = mvf.current + 1)
 Set the *unfolded* pattern to `new_fold`. By default move the next *fold* after `current`.
 """
@@ -97,6 +91,5 @@ function unfold(mvf::MVectorFold; from=1, to=folds(mvf))
         end
         count += 1
     end
-    # reset_pattern!(mvf)
     return v
 end

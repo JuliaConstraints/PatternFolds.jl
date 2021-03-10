@@ -54,3 +54,9 @@ Returns a random value of `pf` as if it was unfolded.
 function Base.rand(pf::PF) where {PF <: PatternFold}
     return Base.rand(pattern(pf)) + Base.rand(0:(folds(pf) - 1)) * gap(pf)
 end
+
+"""
+    reset_pattern!(<:PatternFold)
+Reset the *unfolded* pattern to the first fold.
+"""
+reset_pattern!(mvf) = set_fold!(mvf, 1)
