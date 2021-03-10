@@ -27,7 +27,7 @@
         @test ndims(vf) == 1
         @test rand(vf) ∈ vf
         @test collect(vf) == [i for i in vf] == unfold(vf)
-        @test collect(Iterators.reverse(vf)) == reverse(collect(vf))
+        @test collect(Iterators.reverse(vf)) == reverse(collect(vf)) == results[:reverse]
     end
     @test isempty(VectorFold(Vector(),1,1))
     @test isempty(MVectorFold(Vector(),1,1))
