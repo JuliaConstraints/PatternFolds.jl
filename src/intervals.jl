@@ -84,3 +84,5 @@ function Base.iterate(r_iter::Base.Iterators.Reverse{IntervalsFold{T}},
     set_fold!(iter, next_state)
 	return  iter.pattern, next_state
 end
+
+Base.in(val, isf::IntervalsFold) = any(i -> val ∈ i, isf)
