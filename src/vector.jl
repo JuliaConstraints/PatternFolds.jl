@@ -31,7 +31,7 @@ function set_fold!(mvf, new_fold = mvf.current + 1)
         mvf.pattern .+= distortion
         mvf.current = new_fold
     end
-end 
+end
 
 # Base case iterate method
 function Base.iterate(iter::VectorFold)
