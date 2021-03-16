@@ -1,12 +1,16 @@
 module PatternFolds
 
-import Base: length, rand, iterate, isempty, ndims, +, in, size
-import Lazy: @forward
+# usings
+using Lazy
 
 # exports
-export PatternFold, IVectorFold, VectorFold, Interval, IntervalsFold
+export PatternFold
+export IVectorFold, VectorFold
+export Interval, IntervalsFold
 export pattern, gap, folds
-export length, unfold
+export length
+export unfold
+export value
 
 # includes
 include("common.jl")

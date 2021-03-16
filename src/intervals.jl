@@ -11,8 +11,8 @@ Interval(a, b) = Interval{typeof(a[1])}(a,b)
 
 a(i) = i.a
 b(i) = i.b
-+(bound::Tuple{T, Bool}, gap::T) where T = bound[1]+gap, bound[2]
-+(i::Interval, gap) = Interval(a(i) + gap, b(i) + gap)
+Base.:+(bound::Tuple{T, Bool}, gap::T) where T = bound[1]+gap, bound[2]
+Base.:+(i::Interval, gap) = Interval(a(i) + gap, b(i) + gap)
 
 value(i, ::Val{:a}) = i.a[1]
 value(i, ::Val{:b}) = i.b[1]
@@ -45,7 +45,7 @@ end
 
 IntervalsFold(p, g, f, c = 1) = IntervalsFold(p, g, f, c)
 
-@forward IntervalsFold.pattern a, b, isempty
+@forward IntervalsFold.pattern a, b, Base.isempty
 
 function pattern(isf::IntervalsFold)
     distortion = gap(isf) * (isf.current - 1)
@@ -66,7 +66,7 @@ function set_fold!(isf::IntervalsFold, new_fold = isf.current + 1)
         isf.pattern += distortion
         isf.current = new_fold
     end
-end 
+end
 
 function Base.iterate(iter::IntervalsFold)
     reset_pattern!(iter)

@@ -27,7 +27,7 @@ Return the number of *folds*. An infinite folded pattern returns `0`.
 folds(pf) = pf.folds
 
 # Forwards isempty, ndims
-@forward PatternFold.pattern isempty, ndims
+@forward PatternFold.pattern Base.isempty, Base.ndims
 
 # TODO - look if another name is more appropriate
 """
