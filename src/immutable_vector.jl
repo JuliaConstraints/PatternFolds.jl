@@ -71,3 +71,38 @@ function Base.iterate(r_iter::Base.Iterators.Reverse{IVectorFold{T,V}},
 
 	return elem, next_state
 end
+
+# Folding a vector to give a suitable VectorFold
+check_pattern(v, w, gap) = all(i -> i == gap, w - v)
+
+function check_pattern(v, i, gap, fold)
+    for j in 1:(fold -1)
+        v_start, v_end = (j - 1) * i + 1, j * i
+        w_start, w_end = j * i + 1, (j + 1) * i
+        !check_pattern(v[v_start:v_end], v[w_start:w_end], gap) && return false
+    end
+    return true
+end
+
+"""
+    fold(v::V, depth = 0)
+returns a suitable `VectorFold`, which when unfolded gives the Vector V.
+"""
+function fold(v::V, depth = 0) where {T <: Real, V <: AbstractVector{T}}
+    l = length(v)
+    for i in (l ÷ 2):-1:1
+        gap = v[i + 1] - v[1]
+        fold, r = divrem(l, i)
+        if  r == 0 && check_pattern(v, i, gap, fold)
+        
+            # return VectorFold(fold(v[1:i], depth + 1), gap, fold)
+            return VectorFold(v[1:i], gap, fold)
+        end
+    end
+    if depth == 0
+        @warn "No non-degenerate patterns have been found" v
+        return VectorFold(v, zero(T), 1)
+    else
+        return v
+    end
+end
