@@ -60,3 +60,29 @@ end
 Reset the *unfolded* pattern to the first fold.
 """
 reset_pattern!(mvf) = set_fold!(mvf, 1)
+
+"""
+    fold(v::V, depth = 0)
+returns a suitable `VectorFold`, which when unfolded gives the Vector V.
+"""
+function fold(v::V, depth = 0; kind = :mutable) where {T <: Real, V <: AbstractVector{T}}
+    l = length(v)
+    for i in 1:(l ÷ 2)
+        gap = v[i + 1] - v[1]
+        fold, r = divrem(l, i)
+        if  r == 0 && check_pattern(v, i, gap, fold)
+            # return VectorFold(fold(v[1:i], depth + 1), gap, fold)
+            return make_vector_fold(v[1:i], gap, fold, kind)
+        end
+    end
+    if depth == 0
+        @warn "No non-degenerate patterns have been found" v
+        return make_vector_fold(v, zero(T), 1, kind)
+    else
+        return v
+    end
+end
+
+function make_vector_fold(pattern, gap, fold, kind = :mutable)
+    return make_vector_fold(pattern, gap, fold, Val(kind))
+end

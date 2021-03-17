@@ -93,3 +93,5 @@ function unfold(mvf::VectorFold; from=1, to=folds(mvf))
     end
     return v
 end
+
+make_vector_fold(pattern, gap, fold, ::Val{:mutable}) = VectorFold(pattern, gap, fold)

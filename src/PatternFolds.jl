@@ -7,9 +7,9 @@ using Lazy
 export PatternFold
 export IVectorFold, VectorFold
 export Interval, IntervalsFold
-export pattern, gap, folds, fold, check_pattern
+export pattern, gap, folds, check_pattern
 export length
-export unfold
+export fold, unfold
 export value
 
 # includes
