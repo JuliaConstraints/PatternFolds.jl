@@ -90,11 +90,10 @@ returns a suitable `VectorFold`, which when unfolded gives the Vector V.
 """
 function fold(v::V, depth = 0) where {T <: Real, V <: AbstractVector{T}}
     l = length(v)
-    for i in (l ÷ 2):-1:1
+    for i in 1:(l ÷ 2)
         gap = v[i + 1] - v[1]
         fold, r = divrem(l, i)
         if  r == 0 && check_pattern(v, i, gap, fold)
-        
             # return VectorFold(fold(v[1:i], depth + 1), gap, fold)
             return VectorFold(v[1:i], gap, fold)
         end
