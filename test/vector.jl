@@ -31,4 +31,16 @@
     end
     @test isempty(IVectorFold(Vector(),1,1))
     @test isempty(VectorFold(Vector(),1,1))
+
+    v1 = VectorFold([42,3,45,6],13,4)
+    w1 = unfold(v1)
+    v11 = fold(w1)
+
+    @test unfold(v11) == w1
+
+    v2 = VectorFold([34,34,43,43],10,3)
+    w2 = unfold(v2)
+    v22 = fold(w2)
+
+    @test unfold(v22) == w2
 end

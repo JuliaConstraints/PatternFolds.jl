@@ -84,24 +84,4 @@ function check_pattern(v, i, gap, fold)
     return true
 end
 
-"""
-    fold(v::V, depth = 0)
-returns a suitable `VectorFold`, which when unfolded gives the Vector V.
-"""
-function fold(v::V, depth = 0) where {T <: Real, V <: AbstractVector{T}}
-    l = length(v)
-    for i in 1:(l ÷ 2)
-        gap = v[i + 1] - v[1]
-        fold, r = divrem(l, i)
-        if  r == 0 && check_pattern(v, i, gap, fold)
-            # return VectorFold(fold(v[1:i], depth + 1), gap, fold)
-            return VectorFold(v[1:i], gap, fold)
-        end
-    end
-    if depth == 0
-        @warn "No non-degenerate patterns have been found" v
-        return VectorFold(v, zero(T), 1)
-    else
-        return v
-    end
-end
+make_vector_fold(pattern, gap, fold, ::Val{:immutable}) = IVectorFold(pattern, gap, fold)
