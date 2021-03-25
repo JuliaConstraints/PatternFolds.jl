@@ -10,7 +10,8 @@ export Interval, IntervalsFold
 export pattern, gap, folds, check_pattern
 export length
 export fold, unfold
-export value
+export value, closed, opened
+export a_isless, b_isless, a_ismore, b_ismore
 
 # includes
 include("common.jl")
