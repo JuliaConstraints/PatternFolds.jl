@@ -23,6 +23,22 @@ closed(i, ::Val{:b}) = i.b[2]
 closed(i, bound) = closed(i, Val(bound))
 opened(i, bound) = !closed(i, bound)
 
+function a_isless(i₁, i₂)
+    a₁ = value(i₁, :a)
+    a₂ = value(i₂, :a)
+    return a₁ == a₂ ? closed(i₁, :a) || opened(i₂, :a) : a₁ < a₂
+end
+
+a_ismore(i₁, i₂) = a_isless(i₂, i₁)
+
+function b_ismore(i₁, i₂)
+    b₁ = value(i₁, :b)
+    b₂ = value(i₂, :b)
+    return b₁ == b₂ ? closed(i₁, :b) || opened(i₂, :b) : b₁ > b₂
+end 
+
+b_isless(i₁, i₂) = b_ismore(i₂, i₁)
+
 function Base.in(val, i::Interval)
     (x, y) = (value(i, :a), value(i, :b))
     lesser = closed(i, :a) ? x ≤ val : x < val
