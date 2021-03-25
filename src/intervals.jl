@@ -35,7 +35,7 @@ function b_ismore(i₁, i₂)
     b₁ = value(i₁, :b)
     b₂ = value(i₂, :b)
     return b₁ == b₂ ? closed(i₁, :b) || opened(i₂, :b) : b₁ > b₂
-end 
+end
 
 b_isless(i₁, i₂) = b_ismore(i₂, i₁)
 
@@ -50,7 +50,7 @@ Base.length(i::Interval) = 1
 Base.size(i::Interval) = value(i, :b) - value(i, :a)
 Base.isempty(i::Interval) = size(i) == 0 && (opened(i, :a) || opened(i, :b))
 Base.ndims(::Interval) = 1
-Base.rand(i::Interval) = rand() * length(i) + value(i, :a)
+Base.rand(i::Interval) = rand() * size(i) + value(i, :a)
 
 mutable struct IntervalsFold{T <: Real} <: PatternFold{T, Interval{T}}
     pattern::Interval{T}
