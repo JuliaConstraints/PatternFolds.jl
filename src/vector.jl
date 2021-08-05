@@ -1,7 +1,7 @@
 """
-    MVectorFold{T,V <: AbstractVector{T}}
-A mutable structure for folded vector that extends the methods of AbstractVector. Compared to `VectorFold`, this tructure is about 20% faster using iterators. Unfolding is twice slower though.
-Note that this structure keep an active pointer to the `current` *unfolded* pattern. However, its external behavior is similar to `VectorFold`.
+    VectorFold{T,V <: AbstractVector{T}}
+A mutable structure for folded vector that extends the methods of AbstractVector. Compared to `IVectorFold`, this tructure is about 20% faster using iterators.
+Note that this structure keep an active pointer to the `current` *unfolded* pattern. However, its external behavior is similar to `IVectorFold`.
 """
 mutable struct VectorFold{T,V <: AbstractVector{T}} <: AbstractVectorFold{T}
     pattern::V
@@ -22,7 +22,7 @@ end
 pattern(mvf::VectorFold, index) = pattern(mvf)[index]
 
 """
-    set_fold!(mvf::MVectorFold, new_fold = mvf.current + 1)
+    set_fold!(mvf::VectorFold, new_fold = mvf.current + 1)
 Set the *unfolded* pattern to `new_fold`. By default move the next *fold* after `current`.
 """
 function set_fold!(mvf, new_fold = mvf.current + 1)

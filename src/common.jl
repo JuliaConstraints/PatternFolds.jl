@@ -1,6 +1,6 @@
 """
     AbstractVectorFold{T, P}
-An abstract stype used as an interface for folded patterns such as `VectorFold`.
+An abstract type used as an interface for folded vectors such as `VectorFold`.
 To implement the interface and inherit from it, a new structure must define three fields:
 - `pattern::P`. Note that both `length(::P)` and `rand(::P)` methods must be available
 - `gap::T`
@@ -8,6 +8,18 @@ To implement the interface and inherit from it, a new structure must define thre
 """
 abstract type AbstractVectorFold{T} <: AbstractVector{T} end
 
+"""
+    PatternFold{T, P}
+A `Union` type used as an interface for folded patterns such as `VectorFold`.
+To implement the interface and inherit from it, a new structure `MyFold{T[,P]}` must define three fields:
+- `pattern::P`. Note that both `length(::P)` and `rand(::P)` methods must be available
+- `gap::T`S
+- `folds::int`
+Finally one can redefine PatternFold{T}
+```julia
+PatternFold{T} = Union{AbstractVectorFold{T}, IntervalsFold{T}, MyFold{T[,P]}}
+```
+"""
 PatternFold{T} = Union{AbstractVectorFold{T}, IntervalsFold{T}}
 
 """
@@ -31,7 +43,6 @@ folds(pf) = pf.folds
 # Forwards isempty, ndims
 @forward PatternFold.pattern Base.isempty, Base.ndims
 
-# TODO - look if another name is more appropriate
 """
     pattern_length(pf<:PatternFold)
 Return the length of the basic pattern of `pf`.
@@ -86,6 +97,10 @@ function fold(v::V, depth = 0; kind = :mutable) where {T <: Real, V <: AbstractV
     end
 end
 
+"""
+    make_vector_fold(pattern, gap, fold, kind = :mutable)
+A dispatcher to construct a folded vector. The `kind` of vector can be set to either `:mutable` (default) or `:immutable`. The default is faster in most cases but it depends on the `pattern`, `gap`, and `fold` parameters. For critical code, it is recommended to benchmark both options.
+"""
 function make_vector_fold(pattern, gap, fold, kind = :mutable)
     return make_vector_fold(pattern, gap, fold, Val(kind))
 end
