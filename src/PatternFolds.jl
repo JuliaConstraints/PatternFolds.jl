@@ -19,6 +19,7 @@ export fold
 export folds
 export gap
 export length
+export make_vector_fold
 export opened
 export pattern
 export unfold
