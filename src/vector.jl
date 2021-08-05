@@ -3,7 +3,7 @@
 A mutable structure for folded vector that extends the methods of AbstractVector. Compared to `VectorFold`, this tructure is about 20% faster using iterators. Unfolding is twice slower though.
 Note that this structure keep an active pointer to the `current` *unfolded* pattern. However, its external behavior is similar to `VectorFold`.
 """
-mutable struct VectorFold{T,V <: AbstractVector{T}} <: PatternFold{T,V}
+mutable struct VectorFold{T,V <: AbstractVector{T}} <: AbstractVectorFold{T}
     pattern::V
     gap::T
     folds::Int

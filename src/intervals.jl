@@ -52,7 +52,7 @@ Base.isempty(i::Interval) = size(i) == 0 && (opened(i, :a) || opened(i, :b))
 Base.ndims(::Interval) = 1
 Base.rand(i::Interval) = rand() * size(i) + value(i, :a)
 
-mutable struct IntervalsFold{T <: Real} <: PatternFold{T, Interval{T}}
+mutable struct IntervalsFold{T <: Real} #<: PatternFold{T, Interval{T}}
     pattern::Interval{T}
     gap::T
     folds::Int

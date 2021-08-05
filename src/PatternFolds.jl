@@ -7,7 +7,6 @@ using Lazy
 export Interval
 export IntervalsFold
 export IVectorFold
-export PatternFold
 export VectorFold
 
 export a_isless
@@ -26,9 +25,9 @@ export unfold
 export value
 
 # includes
+include("intervals.jl")
 include("common.jl")
 include("immutable_vector.jl")
 include("vector.jl")
-include("intervals.jl")
 
 end

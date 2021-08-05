@@ -2,7 +2,7 @@
     VectorFold{T,V <: AbstractVector{T}}
 A folded vector structure that extends the methods of AbstractVector to a folded structure.
 """
-struct IVectorFold{T,V <: AbstractVector{T}} <: PatternFold{T,V}
+struct IVectorFold{T,V <: AbstractVector{T}} <: AbstractVectorFold{T}
     pattern::V
     gap::T
     folds::Int
