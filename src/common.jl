@@ -104,3 +104,7 @@ A dispatcher to construct a folded vector. The `kind` of vector can be set to ei
 function make_vector_fold(pattern, gap, fold, kind = :mutable)
     return make_vector_fold(pattern, gap, fold, Val(kind))
 end
+
+function Base.print_array(io::IO, X::AbstractVectorFold)
+    print(io, "\tPattern: $(pattern(X))\n\tGap: $(gap(X))\n\tFolds: $(folds(X))")
+end
