@@ -108,10 +108,9 @@ function make_vector_fold(isf; kind = :mutable)
     vf = kind == :mutable ? "VectorFold" : "IVectorFold"
     str = "The pattern of the interval is not a point." *
         " The IntervalsFold cannot be converted to a $vf"
-    pt = pattern(isf)
-    @assert is_point(pt) str
+    @assert is_points(isf) str
 
-    return make_vector_fold([value(pt, :a)], gap(isf), folds(isf), kind)
+    return make_vector_fold([value(pattern(isf), :a)], gap(isf), folds(isf), kind)
 end
 
 function Base.print_array(io::IO, X::AbstractVectorFold)

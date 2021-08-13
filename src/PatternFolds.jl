@@ -18,6 +18,8 @@ export closed
 export fold
 export folds
 export gap
+export is_point
+export is_points
 export length
 export make_vector_fold
 export opened
