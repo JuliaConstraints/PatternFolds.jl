@@ -52,6 +52,12 @@ Base.isempty(i::Interval) = size(i) == 0 && (opened(i, :a) || opened(i, :b))
 Base.ndims(::Interval) = 1
 Base.rand(i::Interval) = rand() * size(i) + value(i, :a)
 
+"""
+    is_point(i::Interval)
+Check if the interval `i` is simple point.
+"""
+is_point(i) = value(i, :a) == value(i, :b) && !isempty(i)
+
 mutable struct IntervalsFold{T <: Real} #<: PatternFold{T, Interval{T}}
     pattern::Interval{T}
     gap::T
