@@ -39,6 +39,8 @@ end
 
 b_isless(i₁, i₂) = b_ismore(i₂, i₁)
 
+b_eq_a(i₁, i₂) = b(i₁) == a(i₂)
+
 function Base.in(val, i::Interval)
     (x, y) = (value(i, :a), value(i, :b))
     lesser = closed(i, :a) ? x ≤ val : x < val
@@ -57,6 +59,12 @@ Base.rand(i::Interval) = rand() * size(i) + value(i, :a)
 Check if the interval `i` is simple point.
 """
 is_point(i) = value(i, :a) == value(i, :b) && !isempty(i)
+
+# function Base.intersect(i₁::Interval, i₂::Interval)
+#     !a_isless(i₁, i₂) && return intersect(i₂, i₁)
+#     b_ismore(i₁, i₂) && return i₂
+#     value(i₁, :b) ∈ i₂
+# end
 
 mutable struct IntervalsFold{T <: Real} #<: PatternFold{T, Interval{T}}
     pattern::Interval{T}
