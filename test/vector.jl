@@ -43,4 +43,7 @@
     v22 = fold(w2)
 
     @test unfold(v22) == w2
+
+    isf = IntervalsFold(Interval((0.0, true), (0.0, true)), 1.0, 5)
+    @test unfold(make_vector_fold(isf)) == [i for i in 0.0:4.0]
 end
