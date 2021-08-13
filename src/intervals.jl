@@ -120,3 +120,5 @@ end
 Base.size(isf::IntervalsFold) = size(isf.pattern) * folds(isf)
 
 Base.eltype(::Type{<:IntervalsFold{T}}) where {T} = Interval{T}
+
+is_points(isf) = is_point(pattern(isf))
