@@ -20,7 +20,7 @@ Finally one can redefine PatternFold{T}
 PatternFold{T} = Union{AbstractVectorFold{T}, IntervalsFold{T}, MyFold{T[,P]}}
 ```
 """
-PatternFold{T} = Union{AbstractVectorFold{T}, IntervalsFold{T}}
+PatternFold = Union{AbstractVectorFold, IntervalsFold}
 
 """
     pattern(<:PatternFold)
@@ -55,11 +55,6 @@ Return the length of `pf` if unfolded.
 """
 Base.length(pf::PatternFold) = pattern_length(pf) * folds(pf)
 Base.size(pf::PatternFold) = (length(pf),)
-
-"""
-    eltype(pf<: PatternFolds)
-"""
-Base.eltype(::Type{<:PatternFold{T}}) where {T} = T
 
 """
     rand(pf<:PatternFold)
