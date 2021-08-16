@@ -1,31 +1,25 @@
 module PatternFolds
 
 # usings
+using Intervals
 using Lazy
 
+# imports
+import Intervals: Unbounded
+
 # exports
-export Interval
 export IntervalsFold
 export IVectorFold
 export VectorFold
 
-export a_isless
-export a_ismore
-export b_isless
-export b_ismore
 export check_pattern
-export closed
 export fold
 export folds
 export gap
-export is_point
-export is_points
-export length
+export length # TODO: rename span
 export make_vector_fold
-export opened
 export pattern
 export unfold
-export value
 
 # includes
 include("intervals.jl")

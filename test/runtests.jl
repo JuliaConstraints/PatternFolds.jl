@@ -1,3 +1,4 @@
+using Intervals
 using PatternFolds
 using Test
 

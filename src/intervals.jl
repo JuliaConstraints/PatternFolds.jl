@@ -1,101 +1,66 @@
-struct Interval{T <: Real}
-    a::Tuple{T, Bool}
-    b::Tuple{T, Bool}
+# _maxfloat(::Type{T}) where {T<:AbstractFloat} = prevfloat(typemax(T))
+# _minfloat(::Type{T}) where {T<:AbstractFloat} = nextfloat(typemin(T))
 
-    function Interval{T}(a, b) where {T <: Real}
-        bounds = (a[1] < b[1] ? (a, b) : (b, a))
-        return new{T}(bounds[1], bounds[2])
+Base.ndims(::Interval) = 1
+
+function Base.rand(i::Interval{T,L,R}) where {T,L,R}
+    # α = max(_minfloat(T), first(i))
+    # β = min(_maxfloat(T), last(i))
+    μ = maxintfloat(T, Int)
+    α = max(-μ, first(i))
+    β = min(μ, last(i))
+    δ = β - α
+    # if δ === Inf
+    if δ > μ
+        return rand(rand() < 0.5 ? α..zero(T) : zero(T)..β)
+    else
+        # r = α + exp10(log10(δ) * rand())
+        r = α + δ * rand()
+        r ∉ i && return rand(i)
+        return r
     end
 end
-Interval(a, b) = Interval{typeof(a[1])}(a,b)
 
-a(i) = i.a
-b(i) = i.b
-Base.:+(bound::Tuple{T, Bool}, gap::T) where T = bound[1]+gap, bound[2]
-Base.:+(i::Interval, gap) = Interval(a(i) + gap, b(i) + gap)
-
-value(i, ::Val{:a}) = i.a[1]
-value(i, ::Val{:b}) = i.b[1]
-value(i, bound) = value(i, Val(bound))
-
-closed(i, ::Val{:a}) = i.a[2]
-closed(i, ::Val{:b}) = i.b[2]
-closed(i, bound) = closed(i, Val(bound))
-opened(i, bound) = !closed(i, bound)
-
-function a_isless(i₁, i₂)
-    a₁ = value(i₁, :a)
-    a₂ = value(i₂, :a)
-    return a₁ == a₂ ? closed(i₁, :a) || opened(i₂, :a) : a₁ < a₂
-end
-
-a_ismore(i₁, i₂) = a_isless(i₂, i₁)
-
-function b_ismore(i₁, i₂)
-    b₁ = value(i₁, :b)
-    b₂ = value(i₂, :b)
-    return b₁ == b₂ ? closed(i₁, :b) || opened(i₂, :b) : b₁ > b₂
-end
-
-b_isless(i₁, i₂) = b_ismore(i₂, i₁)
-
-b_eq_a(i₁, i₂) = b(i₁) == a(i₂)
-
-function Base.in(val, i::Interval)
-    (x, y) = (value(i, :a), value(i, :b))
-    lesser = closed(i, :a) ? x ≤ val : x < val
-    greater = closed(i, :b) ? y ≥ val : y > val
-    return lesser && greater
-end
-
-Base.length(i::Interval) = 1
-Base.size(i::Interval) = value(i, :b) - value(i, :a)
-Base.isempty(i::Interval) = size(i) == 0 && (opened(i, :a) || opened(i, :b))
-Base.ndims(::Interval) = 1
-Base.rand(i::Interval) = rand() * size(i) + value(i, :a)
-
-"""
-    is_point(i::Interval)
-Check if the interval `i` is simple point.
-"""
-is_point(i) = value(i, :a) == value(i, :b) && !isempty(i)
-
-# function Base.intersect(i₁::Interval, i₂::Interval)
-#     !a_isless(i₁, i₂) && return intersect(i₂, i₁)
-#     b_ismore(i₁, i₂) && return i₂
-#     value(i₁, :b) ∈ i₂
-# end
-
-mutable struct IntervalsFold{T <: Real} #<: PatternFold{T, Interval{T}}
-    pattern::Interval{T}
+mutable struct IntervalsFold{T<:AbstractFloat,L<:Intervals.Bound,R<:Intervals.Bound}
+    pattern::Interval{T,L,R}
     gap::T
     folds::Int
     current::Int
 end
 
-IntervalsFold(p, g, f, c = 1) = IntervalsFold(p, g, f, c)
+IntervalsFold(p, g, f, c=1) = IntervalsFold(p, g, f, c)
 
-@forward IntervalsFold.pattern a, b, Base.isempty
+@forward IntervalsFold.pattern Base.isempty, Base.ndims
+
+Base.lastindex(isf::IntervalsFold) = folds(isf)
+
+Base.getindex(isf::IntervalsFold, key...) = map(k -> get_fold!(isf, k), key)
 
 function pattern(isf::IntervalsFold)
     distortion = gap(isf) * (isf.current - 1)
     return isf.pattern + (-distortion)
 end
 
-function unfold(isf::IntervalsFold)
+function unfold(isf::IntervalsFold{T,L,R}) where {T,L,R}
     reset_pattern!(isf)
-    x, y = a(isf), b(isf)
+    x = first(pattern(isf))
+    y = last(pattern(isf))
     g = gap(isf)
     f = folds(isf)
-    return map(i -> Interval(x + g * i, y + g * i), 0:(f - 1))
+    return [Interval{T,L,R}(x + g * i, y + g * i) for i in 0:(f - 1)]
 end
 
-function set_fold!(isf::IntervalsFold, new_fold = isf.current + 1)
+function set_fold!(isf::IntervalsFold, new_fold=isf.current + 1)
     if new_fold != isf.current && 0 < new_fold ≤ isf.folds
         distortion = gap(isf) * (new_fold - isf.current)
         isf.pattern += distortion
         isf.current = new_fold
     end
+end
+
+function get_fold!(isf::IntervalsFold, f)
+    set_fold!(isf, f)
+    return isf.pattern
 end
 
 function Base.iterate(iter::IntervalsFold)
@@ -107,17 +72,18 @@ end
 function Base.iterate(iter::IntervalsFold, state::Int)
     state ≥ folds(iter) && return nothing
     set_fold!(iter)
-	return iter.pattern, state + 1
+    return iter.pattern, state + 1
 end
 
 # Reverse iterate method
-function Base.iterate(r_iter::Base.Iterators.Reverse{IntervalsFold{T}},
-    state::Int = length(r_iter.itr)) where {T}
-	state < 1 && return nothing
-	iter = r_iter.itr
+function Base.iterate(
+    r_iter::Base.Iterators.Reverse{<:IntervalsFold}, state::Int=length(r_iter.itr)
+)
+    state < 1 && return nothing
+    iter = r_iter.itr
     next_state = state - 1
     set_fold!(iter, state)
-	return  iter.pattern, next_state
+    return iter.pattern, next_state
 end
 
 function Base.in(val, isf::IntervalsFold)
@@ -125,8 +91,18 @@ function Base.in(val, isf::IntervalsFold)
     return any(i -> val ∈ i, isf)
 end
 
-Base.size(isf::IntervalsFold) = size(isf.pattern) * folds(isf)
+Base.size(isf::IntervalsFold) = span(isf.pattern) * folds(isf)
 
-Base.eltype(::Type{<:IntervalsFold{T}}) where {T} = Interval{T}
+Base.length(isf::IntervalsFold) = folds(isf)
+
+Base.eltype(::Type{<:IntervalsFold{T,L,R}}) where {T,L,R} = Interval{T,L,R}
 
 is_points(isf) = is_point(pattern(isf))
+
+pattern_length(isf::IntervalsFold) = span(pattern(isf))
+
+function Base.rand(isf::IntervalsFold)
+    i = rand(1:folds(isf)) - 1
+    p = pattern(isf)
+    return rand(p) + i * gap(isf)
+end

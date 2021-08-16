@@ -1,25 +1,18 @@
 @testset "IntervalsFold" begin
+    i01 = Interval{Open,Closed}(0.0, 1.0)
+    i23 = Interval{Open,Closed}(2.0, 3.0)
+    i45 = Interval{Open,Closed}(4.0, 5.0)
+    i67 = Interval{Open,Closed}(6.0, 7.0)
+    i89 = Interval{Open,Closed}(8.0, 9.0)
     isf_dict = Dict([
-        IntervalsFold(Interval((0.0, true), (1.0, false)), 2.0, 5) => Dict(
-            :pattern => Interval((0.0, true), (1.0, false)),
+        IntervalsFold(i01, 2.0, 5) => Dict(
+            :pattern => i01,
             :gap => 2.0,
             :folds => 5,
             :length => 5,
             :size => 5.0,
-            :unfold => [
-                Interval{Float64}((0.0, true), (1.0, false)),
-                Interval{Float64}((2.0, true), (3.0, false)),
-                Interval{Float64}((4.0, true), (5.0, false)),
-                Interval{Float64}((6.0, true), (7.0, false)),
-                Interval{Float64}((8.0, true), (9.0, false)),
-            ],
-            :reverse => reverse([
-                Interval{Float64}((0.0, true), (1.0, false)),
-                Interval{Float64}((2.0, true), (3.0, false)),
-                Interval{Float64}((4.0, true), (5.0, false)),
-                Interval{Float64}((6.0, true), (7.0, false)),
-                Interval{Float64}((8.0, true), (9.0, false)),
-            ]),
+            :unfold => [i01, i23, i45, i67, i89],
+            :reverse => reverse([i01, i23, i45, i67, i89]),
         ),
     ])
 
@@ -31,9 +24,11 @@
         @test size(isf) == results[:size]
         @test unfold(isf) == results[:unfold]
         @test ndims(isf) == 1
-        @test rand(isf) ∈ isf
+        for i in 1:1000
+            @test rand(isf) ∈ isf
+        end
         @test collect(isf) == [i for i in isf] == unfold(isf)
         @test collect(Iterators.reverse(isf)) == reverse(collect(isf)) == results[:reverse]
     end
-    @test isempty(IntervalsFold(Interval((1.0,false),(1.0,true)), 1.0, 1))
+    @test isempty(IntervalsFold(Interval{Open, Closed}(1.0, 1.0), 1.0, 1))
 end
