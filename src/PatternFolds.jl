@@ -1,11 +1,13 @@
 module PatternFolds
 
-# usings
-using Intervals
-using Lazy
+## usings
 
-# imports
-import Intervals: Unbounded
+# Reexport
+using Reexport
+
+# Others
+@reexport using Intervals
+using Lazy
 
 # exports
 export IntervalsFold
