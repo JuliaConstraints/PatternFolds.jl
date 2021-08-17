@@ -1,7 +1,10 @@
 module PatternFolds
 
+# Reexporr
+using Reexport
+
 # Import
-using Intervals
+@reexport using Intervals
 using Lazy
 
 # exports
