@@ -7,6 +7,7 @@ using Reexport
 
 # Others
 @reexport using Intervals
+@reexport using Intervals: Bound
 using Lazy
 
 # exports
