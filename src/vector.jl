@@ -95,9 +95,3 @@ function unfold(mvf::VectorFold; from=1, to=folds(mvf))
 end
 
 make_vector_fold(pattern, gap, fold, ::Val{:mutable}) = VectorFold(pattern, gap, fold)
-
-function Base.getindex(vf::VectorFold, key)
-    d, r = divrem(key + 1, pattern_length(vf))
-    return (d - 1) * gap(vf) + pattern(vf, r + 1)
-end
-Base.getindex(vf::VectorFold, key...) = map(k -> getindex(vf, k), key)
