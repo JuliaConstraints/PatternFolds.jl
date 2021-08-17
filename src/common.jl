@@ -117,3 +117,9 @@ function Base.getindex(vf::AbstractVectorFold, key)
     return (d - 1) * gap(vf) + pattern(vf, r + 1)
 end
 Base.getindex(vf::AbstractVectorFold, key...) = map(k -> getindex(vf, k), key)
+
+"""
+    Base.rand(::Vector{AbstractVectorFold})
+    Extend the `Base.rand` function to `Vector{AbstractVectorFold}`.
+"""
+Base.rand(v::Set{<:AbstractVectorFold}) = rand(collect(Iterators.flatten(v)))

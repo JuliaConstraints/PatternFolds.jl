@@ -107,3 +107,17 @@ function Base.rand(isf::IntervalsFold)
     p = pattern(isf)
     return rand(p) + i * gap(isf)
 end
+
+"""
+    Base.rand(::Vector{IntervalsFold})
+Extend the `Base.rand` function to `Vector{IntervalsFold}`.
+"""
+function Base.rand(v::V) where {V <: Set{<:IntervalsFold}}
+    λ = map(size, collect(v))
+    Λ = sum(λ)
+    σ = [sum(λ[1:i]) / Λ for i in 1:length(v)]
+    r = rand()
+    for z in zip(σ, v)
+        r < z[1] && return rand(z[2])
+    end
+end

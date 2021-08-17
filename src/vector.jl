@@ -3,14 +3,14 @@
 A mutable structure for folded vector that extends the methods of AbstractVector. Compared to `IVectorFold`, this tructure is about 20% faster using iterators.
 Note that this structure keep an active pointer to the `current` *unfolded* pattern. However, its external behavior is similar to `IVectorFold`.
 """
-mutable struct VectorFold{T,V <: AbstractVector{T}} <: AbstractVectorFold{T}
+mutable struct VectorFold{T,V<:AbstractVector{T}} <: AbstractVectorFold{T}
     pattern::V
     gap::T
     folds::Int
     current::Int
 end
 
-VectorFold(p, g, f; c = 1) = VectorFold(p, g, f, c)
+VectorFold(p, g, f; c=1) = VectorFold(p, g, f, c)
 
 pattern_length(mvf::VectorFold) = length(mvf.pattern)
 
@@ -25,7 +25,7 @@ pattern(mvf::VectorFold, index) = pattern(mvf)[index]
     set_fold!(mvf::VectorFold, new_fold = mvf.current + 1)
 Set the *unfolded* pattern to `new_fold`. By default move the next *fold* after `current`.
 """
-function set_fold!(mvf, new_fold = mvf.current + 1)
+function set_fold!(mvf, new_fold=mvf.current + 1)
     if new_fold != mvf.current && 0 < new_fold ≤ mvf.folds
         distortion = gap(mvf) * (new_fold - mvf.current)
         mvf.pattern .+= distortion
@@ -43,38 +43,39 @@ end
 function Base.iterate(iter::VectorFold, state::Int)
     state ≥ length(iter) && return nothing
 
-	next_state = state + 1
+    next_state = state + 1
     pl = pattern_length(iter)
 
-	pattern_counter = mod1(next_state, pl)
-	elem = iter.pattern[pattern_counter]
+    pattern_counter = mod1(next_state, pl)
+    elem = iter.pattern[pattern_counter]
     pattern_counter == pl && set_fold!(iter)
 
-	return elem, next_state
+    return elem, next_state
 end
 
 # Reverse iterate method
-function Base.iterate(r_iter::Base.Iterators.Reverse{VectorFold{T,V}},
-    state::Int = length(r_iter.itr)
+function Base.iterate(
+    r_iter::Base.Iterators.Reverse{VectorFold{T,V}}, state::Int=length(r_iter.itr)
 ) where {T,V}
-	state < 1 && return nothing
+    state < 1 && return nothing
 
-	iter = r_iter.itr
+    iter = r_iter.itr
     state == length(iter) && set_fold!(iter, iter.folds)
 
-	next_state = state - 1
+    next_state = state - 1
     pl = pattern_length(iter)
 
     pattern_counter = mod(next_state, pl) + 1
-	elem = iter.pattern[pattern_counter]
+    elem = iter.pattern[pattern_counter]
     pattern_counter == 1 && set_fold!(iter, iter.current - 1)
 
-	return elem, next_state
+    return elem, next_state
 end
 
 # Specific dispatch for MVectorFold
 function Base.rand(mvf::VectorFold)
-    return Base.rand(mvf.pattern) + Base.rand((1 - mvf.current):(folds(mvf) - mvf.current)) * gap(mvf)
+    return Base.rand(mvf.pattern) +
+           Base.rand((1 - mvf.current):(folds(mvf) - mvf.current)) * gap(mvf)
 end
 
 # Specific dispatch for MVectorFold
