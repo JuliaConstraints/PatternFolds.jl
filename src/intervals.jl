@@ -21,6 +21,7 @@ function Base.rand(i::Interval{T,L,R}) where {T,L,R}
     end
 end
 
+# TODO - Optimise the type of Intervals.Bound (currently abstract super type)
 mutable struct IntervalsFold{T<:AbstractFloat,L<:Intervals.Bound,R<:Intervals.Bound}
     pattern::Interval{T,L,R}
     gap::T
