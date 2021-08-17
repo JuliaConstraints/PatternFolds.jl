@@ -111,3 +111,9 @@ end
 function Base.print_array(io::IO, X::AbstractVectorFold)
     print(io, "\tPattern: $(pattern(X))\n\tGap: $(gap(X))\n\tFolds: $(folds(X))")
 end
+
+function Base.getindex(vf::AbstractVectorFold, key)
+    d, r = divrem(key + 1, pattern_length(vf))
+    return (d - 1) * gap(vf) + pattern(vf, r + 1)
+end
+Base.getindex(vf::AbstractVectorFold, key...) = map(k -> getindex(vf, k), key)
