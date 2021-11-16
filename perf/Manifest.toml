@@ -710,10 +710,10 @@ uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
 version = "2.1.2"
 
 [[deps.PatternFolds]]
-deps = ["Intervals", "Lazy", "Reexport"]
+deps = ["Intervals", "Lazy", "Random", "Reexport"]
 path = "C:\\Users\\jeanf\\.julia\\dev\\PatternFolds"
 uuid = "c18a7f1d-76ad-4ce4-950d-5419b888513b"
-version = "0.2.1"
+version = "0.2.2"
 
 [[deps.PerfChecker]]
 deps = ["BenchmarkTools", "CSV", "Coverage", "DataFrames", "Distributed", "LibGit2", "OrderedCollections", "PGFPlotsX", "Pkg", "Plots", "PrettyTables", "Profile", "Random", "StatsPlots"]

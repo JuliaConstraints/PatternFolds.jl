@@ -6,6 +6,7 @@ using Reexport
 # Import
 @reexport using Intervals
 using Lazy
+using Random
 
 # exports
 export IntervalsFold

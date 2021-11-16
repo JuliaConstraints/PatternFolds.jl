@@ -1,7 +1,7 @@
 \begin{tikzpicture}[/tikz/background rectangle/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, draw opacity={1.0}}, show background rectangle]
 \begin{axis}[point meta max={nan}, point meta min={nan}, legend cell align={left}, legend columns={1}, title={Benchmarks (times) evolution in
-PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{14 pt}{18.2 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, legend style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid, fill={rgb,1:red,1.0;green,1.0;blue,1.0}, fill opacity={1.0}, text opacity={1.0}, font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, text={rgb,1:red,0.0;green,0.0;blue,0.0}, cells={anchor={center}}, at={(1.02, 1)}, anchor={north west}}, axis background/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, opacity={1.0}}, anchor={north west}, xshift={1.0mm}, yshift={-1.0mm}, width={145.4mm}, height={99.6mm}, scaled x ticks={false}, xlabel={version}, x tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, x tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, xlabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, xmajorgrids={true}, xmin={-0.10400000000000004}, xmax={7.104}, xtick={{0.5,1.5,2.5,3.5,4.5,5.5,6.5}}, xticklabels={{$0.1.1$,$0.1.2$,$0.1.3$,$0.1.4$,$0.1.5$,$0.2.0$,$0.2.1$}}, xtick align={inside}, xticklabel style={font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, x grid style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={0.1}, line width={0.5}, solid}, axis x line*={left}, x axis line style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid}, scaled y ticks={false}, ylabel={time (ns)}, y tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, y tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, ylabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, ymajorgrids={true}, ymin={-4.437229e6}, ymax={1.53719329e8}, ytick={{0.0,5.0e7,1.0e8,1.5e8}}, yticklabels={{$0$,$5.00\times10^{7}$,$1.00\times10^{8}$,$1.50\times10^{8}$}}, ytick align={inside}, yticklabel style={font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, y grid style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={0.1}, line width={0.5}, solid}, axis y line*={left}, y axis line style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid}, colorbar={false}]
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid]
+PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{14 pt}{18.2 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, legend style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid, fill={rgb,1:red,1.0;green,1.0;blue,1.0}, fill opacity={1.0}, text opacity={1.0}, font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, text={rgb,1:red,0.0;green,0.0;blue,0.0}, cells={anchor={center}}, at={(1.02, 1)}, anchor={north west}}, axis background/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, opacity={1.0}}, anchor={north west}, xshift={1.0mm}, yshift={-1.0mm}, width={145.4mm}, height={99.6mm}, scaled x ticks={false}, xlabel={version}, x tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, x tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, xlabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, xmajorgrids={true}, xmin={-0.13400000000000004}, xmax={8.134}, xtick={{0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5}}, xticklabels={{$0.1.1$,$0.1.2$,$0.1.3$,$0.1.4$,$0.1.5$,$0.2.0$,$0.2.1$,$0.2.2$}}, xtick align={inside}, xticklabel style={font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, x grid style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={0.1}, line width={0.5}, solid}, axis x line*={left}, x axis line style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid}, scaled y ticks={false}, ylabel={time (ns)}, y tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, y tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, ylabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, ymajorgrids={true}, ymin={-4.437229e6}, ymax={1.53719329e8}, ytick={{0.0,5.0e7,1.0e8,1.5e8}}, yticklabels={{$0$,$5.00\times10^{7}$,$1.00\times10^{8}$,$1.50\times10^{8}$}}, ytick align={inside}, yticklabel style={font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, y grid style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={0.1}, line width={0.5}, solid}, axis y line*={left}, y axis line style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid}, colorbar={false}]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid]
         table[row sep={\\}]
         {
             \\
@@ -13,7 +13,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
         }
         ;
     \addlegendentry {times}
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -25,7 +25,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.9  81300.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -37,7 +37,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.5  94200.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -48,7 +48,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.5  94200.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -59,7 +59,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.5  75300.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -71,7 +71,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.9  77000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -83,7 +83,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.5  91800.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -94,7 +94,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.5  91800.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -105,7 +105,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.5  78400.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -117,7 +117,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.9  85000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -129,7 +129,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.5  94925.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -140,7 +140,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.5  94925.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -151,7 +151,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.5  74800.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -163,7 +163,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.9  76500.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -175,7 +175,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.5  91100.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -186,7 +186,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.5  91100.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -197,7 +197,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.5  68700.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -209,7 +209,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.9  70200.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -221,7 +221,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.5  84000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -232,7 +232,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.5  84000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -243,7 +243,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.5  1.03296025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -255,7 +255,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.9  1.1026025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -267,7 +267,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.5  1.12676025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -278,7 +278,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.5  1.12676025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -289,7 +289,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.5  1.01252625e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -301,7 +301,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.9  1.0987435e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -313,7 +313,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.5  1.13621275e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={2c103fec-aa59-4eff-8ca9-1b3320abe9fb}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -324,7 +324,53 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.5  1.13621275e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={d6a62c9e-35c4-466f-9900-98ac74a5fdfd}, only marks, draw opacity={0.5}, line width={0}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.5  9.61684e7  \\
+            7.3  9.61684e7  \\
+            7.7  9.61684e7  \\
+            7.5  9.61684e7  \\
+            7.5  1.027479e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.9  1.027479e8  \\
+            7.9  1.087833e8  \\
+            7.1  1.087833e8  \\
+            7.1  1.027479e8  \\
+            7.9  1.027479e8  \\
+            7.9  1.087833e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.9  1.11474875e8  \\
+            7.1  1.11474875e8  \\
+            7.1  1.087833e8  \\
+            7.9  1.087833e8  \\
+            7.9  1.11474875e8  \\
+            7.5  1.11474875e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={5cd18678-d943-4ecc-b77c-77b0ab45b50a}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={2}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.5  1.244526e8  \\
+            7.3  1.244526e8  \\
+            7.7  1.244526e8  \\
+            7.5  1.244526e8  \\
+            7.5  1.11474875e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e7e8ddd1-aeab-40ad-bf14-ef127a2be577}, only marks, draw opacity={0.5}, line width={0}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -688,9 +734,23 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.5  1.333474e8  \\
             6.5  1.466513e8  \\
             6.5  1.355594e8  \\
+            7.5  1.262502e8  \\
+            7.5  1.247436e8  \\
+            7.5  1.250419e8  \\
+            7.5  1.29798e8  \\
+            7.5  1.306038e8  \\
+            7.5  1.248495e8  \\
+            7.5  1.321285e8  \\
+            7.5  1.25739e8  \\
+            7.5  1.248829e8  \\
+            7.5  1.256455e8  \\
+            7.5  1.354812e8  \\
+            7.5  1.2987e8  \\
+            7.5  1.266867e8  \\
+            7.5  1.409869e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -701,7 +761,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.5  75600.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -713,7 +773,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.9  81300.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -725,7 +785,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.5  94200.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -736,7 +796,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             0.5  94200.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -747,7 +807,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.5  75300.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -759,7 +819,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.9  77000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -771,7 +831,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.5  91800.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -782,7 +842,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             1.5  91800.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -793,7 +853,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.5  78400.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -805,7 +865,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.9  85000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -817,7 +877,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.5  94925.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -828,7 +888,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             2.5  94925.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -839,7 +899,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.5  74800.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -851,7 +911,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.9  76500.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -863,7 +923,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.5  91100.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -874,7 +934,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             3.5  91100.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -885,7 +945,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.5  68700.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -897,7 +957,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.9  70200.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -909,7 +969,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.5  84000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -920,7 +980,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             4.5  84000.0  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -931,7 +991,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.5  1.03296025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -943,7 +1003,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.9  1.1026025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -955,7 +1015,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.5  1.12676025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -966,7 +1026,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             5.5  1.12676025e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -977,7 +1037,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.5  1.01252625e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -989,7 +1049,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.9  1.0987435e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -1001,7 +1061,7 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.5  1.13621275e8  \\
         }
         ;
-    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={de0b739b-07ff-4404-bee0-91e1c841cca7}, draw opacity={0.5}, line width={0}, solid, forget plot]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
         table[row sep={\\}]
         {
             \\
@@ -1010,6 +1070,52 @@ PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{
             6.7  1.320313e8  \\
             6.5  1.320313e8  \\
             6.5  1.13621275e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.5  9.61684e7  \\
+            7.3  9.61684e7  \\
+            7.7  9.61684e7  \\
+            7.5  9.61684e7  \\
+            7.5  1.027479e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.9  1.027479e8  \\
+            7.9  1.087833e8  \\
+            7.1  1.087833e8  \\
+            7.1  1.027479e8  \\
+            7.9  1.027479e8  \\
+            7.9  1.087833e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.9  1.11474875e8  \\
+            7.1  1.11474875e8  \\
+            7.1  1.087833e8  \\
+            7.9  1.087833e8  \\
+            7.9  1.11474875e8  \\
+            7.5  1.11474875e8  \\
+        }
+        ;
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={e6a37576-354a-4af3-94d0-e750c322b382}, draw opacity={0.5}, line width={0}, solid, forget plot]
+        table[row sep={\\}]
+        {
+            \\
+            7.5  1.244526e8  \\
+            7.3  1.244526e8  \\
+            7.7  1.244526e8  \\
+            7.5  1.244526e8  \\
+            7.5  1.11474875e8  \\
         }
         ;
 \end{axis}

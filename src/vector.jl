@@ -78,6 +78,8 @@ function Base.rand(mvf::VectorFold)
            Base.rand((1 - mvf.current):(folds(mvf) - mvf.current)) * gap(mvf)
 end
 
+Base.rand(mvf::VectorFold, n::Int) = map(_ -> rand(mvf), 1:n)
+
 # Specific dispatch for MVectorFold
 function unfold(mvf::VectorFold; from=1, to=folds(mvf))
     pl = pattern_length(mvf)
