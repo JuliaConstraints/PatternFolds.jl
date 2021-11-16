@@ -1,6 +1,6 @@
 \begin{tikzpicture}[/tikz/background rectangle/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, draw opacity={1.0}}, show background rectangle]
 \begin{axis}[point meta max={nan}, point meta min={nan}, legend cell align={left}, legend columns={1}, title={Mallocs for PatternFolds.jl@v0.2.0}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{14 pt}{18.2 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, legend style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid, fill={rgb,1:red,1.0;green,1.0;blue,1.0}, fill opacity={1.0}, text opacity={1.0}, font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, text={rgb,1:red,0.0;green,0.0;blue,0.0}, cells={anchor={center}}, at={(1.02, 1)}, anchor={north west}}, axis background/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, opacity={1.0}}, anchor={north west}, xshift={1.0mm}, yshift={-1.0mm}, width={145.4mm}, height={99.6mm}, scaled x ticks={false}, xlabel={}, x tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, x tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, xlabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, xmajorticks={false}, xmajorgrids={false}, xmin={-1.5368281882854125}, xmax={1.5379304747095777}, x axis line style={{draw opacity = 0}}, scaled y ticks={false}, ylabel={}, y tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, y tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, ylabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, ymajorticks={false}, ymajorgrids={false}, ymin={-1.0598363757559854}, ymax={1.0595359455485664}, y axis line style={{draw opacity = 0}}, colorbar={false}]
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={dd042adf-046d-40f4-b538-58bf779e2f4f}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={1}, solid]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={196c3eaa-7784-4099-a0ae-960ac9626e74}, area legend, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, draw opacity={0.5}, line width={1}, solid]
         table[row sep={\\}]
         {
             \\
@@ -58,7 +58,7 @@
         }
         ;
     \addlegendentry {vector.jl line 19}
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={cea659b0-26c3-4cfc-a36a-baa19a196724}, area legend, fill={rgb,1:red,0.8889;green,0.4356;blue,0.2781}, fill opacity={1.0}, draw opacity={0.5}, line width={1}, solid]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={09d229e9-caf0-466e-8d3a-e5f9daf3e23d}, area legend, fill={rgb,1:red,0.8889;green,0.4356;blue,0.2781}, fill opacity={1.0}, draw opacity={0.5}, line width={1}, solid]
         table[row sep={\\}]
         {
             \\
@@ -116,7 +116,7 @@
         }
         ;
     \addlegendentry {vector.jl line 84}
-    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={68f30867-39ee-45c1-b214-9f0dcbb25cc0}, area legend, fill={rgb,1:red,0.2422;green,0.6433;blue,0.3044}, fill opacity={1.0}, draw opacity={0.5}, line width={1}, solid]
+    \addplot[color={rgb,1:red,0.0;green,0.0;blue,0.0}, name path={d2151a62-7304-4220-883f-a0a1f1db26ce}, area legend, fill={rgb,1:red,0.2422;green,0.6433;blue,0.3044}, fill opacity={1.0}, draw opacity={0.5}, line width={1}, solid]
         table[row sep={\\}]
         {
             \\

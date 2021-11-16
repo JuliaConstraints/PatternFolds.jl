@@ -8,7 +8,7 @@ target = PatternFolds
 function bench() # 0.2.x
     # Intervals
     itv = Interval{Open,Closed}(0.0, 1.0)
-    i = IntervalsFold(itv, 2.0, 10^6)
+    i = IntervalsFold(itv, 2.0, 1000)
 
     unfold(i)
     collect(i)
@@ -17,7 +17,7 @@ function bench() # 0.2.x
     # rand(i, 1000)
 
     # Vectors
-    vf = make_vector_fold([0, 1], 2, 10^6)
+    vf = make_vector_fold([0, 1], 2, 1000)
     # @info "Checking VectorFold" vf pattern(vf) gap(vf) folds(vf) length(vf)
 
     unfold(vf)
@@ -47,9 +47,7 @@ end
 #     collect(vf)
 #     reverse(collect(vf))
 
-#     for _ in 1:1000
-#         rand(vf)
-#     end
+#     map(_ -> rand(vf), 1:1000)
 
 #     return nothing
 # end

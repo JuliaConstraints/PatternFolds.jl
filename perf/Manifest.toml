@@ -719,7 +719,7 @@ version = "0.2.2"
 deps = ["BenchmarkTools", "CSV", "Coverage", "DataFrames", "Distributed", "LibGit2", "OrderedCollections", "PGFPlotsX", "Pkg", "Plots", "PrettyTables", "Profile", "Random", "StatsPlots"]
 path = "C:\\Users\\jeanf\\.julia\\dev\\PerfChecker"
 uuid = "6309bf6b-a531-4b08-891e-8ee981e5c424"
-version = "0.1.1"
+version = "0.1.2"
 
 [[deps.Pixman_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
