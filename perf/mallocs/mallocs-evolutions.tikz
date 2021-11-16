@@ -1,0 +1,75 @@
+\begin{tikzpicture}[/tikz/background rectangle/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, draw opacity={1.0}}, show background rectangle]
+\begin{axis}[point meta max={nan}, point meta min={nan}, legend cell align={left}, legend columns={1}, title={Mallocs evolution in
+PatternFolds.jl}, title style={at={{(0.5,1)}}, anchor={south}, font={{\fontsize{14 pt}{18.2 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, legend style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid, fill={rgb,1:red,1.0;green,1.0;blue,1.0}, fill opacity={1.0}, text opacity={1.0}, font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, text={rgb,1:red,0.0;green,0.0;blue,0.0}, cells={anchor={center}}, at={(1.02, 1)}, anchor={north west}}, axis background/.style={fill={rgb,1:red,1.0;green,1.0;blue,1.0}, opacity={1.0}}, anchor={north west}, xshift={1.0mm}, yshift={-1.0mm}, width={145.4mm}, height={99.6mm}, scaled x ticks={false}, xlabel={version}, x tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, x tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, xlabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, xmajorgrids={true}, xmin={0.32}, xmax={6.68}, xtick={{0.5,1.5,2.5,3.5,4.5,5.5,6.5}}, xticklabels={{$0.1.1$,$0.1.2$,$0.1.3$,$0.1.4$,$0.1.5$,$0.2.0$,$0.2.1$}}, xtick align={inside}, xticklabel style={font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, x grid style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={0.1}, line width={0.5}, solid}, axis x line*={left}, x axis line style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid}, scaled y ticks={false}, ylabel={bytes}, y tick style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}}, y tick label style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, opacity={1.0}, rotate={0}}, ylabel style={at={(ticklabel cs:0.5)}, anchor=near ticklabel, at={{(ticklabel cs:0.5)}}, anchor={near ticklabel}, font={{\fontsize{11 pt}{14.3 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, ymajorgrids={true}, ymin={-2892.48}, ymax={99308.48}, ytick={{0.0,20000.0,40000.0,60000.0,80000.0}}, yticklabels={{$0$,$2.0\times10^{4}$,$4.0\times10^{4}$,$6.0\times10^{4}$,$8.0\times10^{4}$}}, ytick align={inside}, yticklabel style={font={{\fontsize{8 pt}{10.4 pt}\selectfont}}, color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, rotate={0.0}}, y grid style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={0.1}, line width={0.5}, solid}, axis y line*={left}, y axis line style={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, line width={1}, solid}, colorbar={false}]
+    \addplot[color={rgb,1:red,0.0;green,0.6056;blue,0.9787}, name path={4ac5a3f1-b487-44a6-9439-3f7faded253a}, draw opacity={0.5}, line width={2}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.0;green,0.6056;blue,0.9787}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+        table[row sep={\\}]
+        {
+            \\
+            0.5  0.0  \\
+            1.5  0.0  \\
+            2.5  0.0  \\
+            3.5  0.0  \\
+            4.5  0.0  \\
+            5.5  0.0  \\
+            6.5  0.0  \\
+        }
+        ;
+    \addlegendentry {intervals.jl}
+    \addplot[color={rgb,1:red,0.8889;green,0.4356;blue,0.2781}, name path={eef1b590-6c13-49be-9070-2d648a34f682}, draw opacity={0.5}, line width={2}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.8889;green,0.4356;blue,0.2781}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+        table[row sep={\\}]
+        {
+            \\
+            0.5  0.0  \\
+            1.5  0.0  \\
+            2.5  0.0  \\
+            3.5  0.0  \\
+            4.5  0.0  \\
+            5.5  48.0  \\
+            6.5  48.0  \\
+        }
+        ;
+    \addlegendentry {common.jl}
+    \addplot[color={rgb,1:red,0.2422;green,0.6433;blue,0.3044}, name path={2692cad1-3af6-4173-b2cb-09c67911fbb5}, draw opacity={0.5}, line width={2}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.2422;green,0.6433;blue,0.3044}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+        table[row sep={\\}]
+        {
+            \\
+            0.5  16368.0  \\
+            1.5  16368.0  \\
+            2.5  16368.0  \\
+            3.5  16368.0  \\
+            4.5  32736.0  \\
+            5.5  96416.0  \\
+            6.5  96416.0  \\
+        }
+        ;
+    \addlegendentry {Total}
+    \addplot[color={rgb,1:red,0.7644;green,0.4441;blue,0.8243}, name path={8f2ead75-e6c4-45fd-b305-3acb3c958c32}, draw opacity={0.5}, line width={2}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.7644;green,0.4441;blue,0.8243}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+        table[row sep={\\}]
+        {
+            \\
+            0.5  16368.0  \\
+            1.5  16368.0  \\
+            2.5  16368.0  \\
+            3.5  16368.0  \\
+            4.5  32736.0  \\
+            5.5  96368.0  \\
+            6.5  96368.0  \\
+        }
+        ;
+    \addlegendentry {vector.jl}
+    \addplot[color={rgb,1:red,0.6755;green,0.5557;blue,0.0942}, name path={eb19bd4e-fb4d-464f-89be-4749250fd5c9}, draw opacity={0.5}, line width={2}, solid, mark={*}, mark size={3.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={rgb,1:red,0.6755;green,0.5557;blue,0.0942}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+        table[row sep={\\}]
+        {
+            \\
+            0.5  0.0  \\
+            1.5  0.0  \\
+            2.5  0.0  \\
+            3.5  0.0  \\
+            4.5  0.0  \\
+            5.5  0.0  \\
+            6.5  0.0  \\
+        }
+        ;
+    \addlegendentry {immutable\_vector.jl}
+\end{axis}
+\end{tikzpicture}

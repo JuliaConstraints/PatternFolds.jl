@@ -1,0 +1,5 @@
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+PatternFolds = "c18a7f1d-76ad-4ce4-950d-5419b888513b"
+PerfChecker = "6309bf6b-a531-4b08-891e-8ee981e5c424"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
