@@ -44,4 +44,11 @@
     v22 = fold(w2)
 
     @test unfold(v22) == w2
+
+    v3 = make_vector_fold([42,3,45,6],13,4,:immutable)
+    w3 = unfold(v3)
+    v33 = fold(w3)
+
+    @test unfold(v33) == w3
+    collect(Iterators.reverse(v33))
 end
