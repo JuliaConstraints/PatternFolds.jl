@@ -27,7 +27,8 @@
         @test ndims(vf) == 1
         @test mapreduce(x -> x ∈ vf, *, rand(vf, 10))
         @test collect(vf) == [i for i in vf] == unfold(vf)
-        @test collect(Iterators.reverse(vf)) == reverse(collect(vf)) == results[:reverse]
+        @test collect(Iterators.reverse(vf)) == results[:reverse]
+        @test reverse(collect(vf)) == results[:reverse]
     end
     @test isempty(make_vector_fold(Vector(),1,1,:immutable))
     @test isempty(make_vector_fold(Vector(),1,1))
@@ -43,8 +44,4 @@
     v22 = fold(w2)
 
     @test unfold(v22) == w2
-
-    # isf = IntervalsFold(Interval((0.0, true), (0.0, true)), 1.0, 5)
-    # @test is_points(isf)
-    # @test unfold(make_vector_fold(isf)) == [i for i in 0.0:4.0]
 end
