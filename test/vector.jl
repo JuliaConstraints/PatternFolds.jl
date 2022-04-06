@@ -25,7 +25,7 @@
         @test length(vf) == results[:length]
         @test unfold(vf) == results[:unfold]
         @test ndims(vf) == 1
-        @test rand(vf) ∈ vf
+        @test mapreduce(x -> x ∈ vf, *, rand(vf, 10))
         @test collect(vf) == [i for i in vf] == unfold(vf)
         @test collect(Iterators.reverse(vf)) == reverse(collect(vf)) == results[:reverse]
     end
