@@ -1,18 +1,23 @@
-bytes,ratio (%),filename: [C:\Users\jeanf\.julia\packages\PatternFolds\v89uX\src\,linenumber
+bytes,ratio (%),filename: [C:\Users\jeanf\.julia\dev\PatternFolds\src\,linenumber
 16128,98.53,vector.jl,84
 240,1.47,vector.jl,19
 0,0.0,vector.jl,94
+0,0.0,vector.jl,93
 0,0.0,vector.jl,92
+0,0.0,vector.jl,91
 0,0.0,vector.jl,90
 0,0.0,vector.jl,89
 0,0.0,vector.jl,88
 0,0.0,vector.jl,87
 0,0.0,vector.jl,83
 0,0.0,vector.jl,82
-0,0.0,vector.jl,77
 0,0.0,vector.jl,32
 0,0.0,vector.jl,31
 0,0.0,vector.jl,30
 0,0.0,vector.jl,29
 0,0.0,vector.jl,18
 0,0.0,intervals.jl,19
+0,0.0,intervals.jl,10
+0,0.0,intervals.jl,10
+0,0.0,intervals.jl,7
+0,0.0,intervals.jl,6
