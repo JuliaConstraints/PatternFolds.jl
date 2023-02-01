@@ -1,16 +1,17 @@
-bytes,ratio (%),filename: [C:\Users\jeanf\.julia\packages\PatternFolds\KzXjV\src\,linenumber
+bytes,ratio (%),filename: [C:\Users\jeanf\.julia\dev\PatternFolds\src\,linenumber
 16128,98.25,vector.jl,87
 240,1.46,vector.jl,19
 48,0.29,common.jl,100
 0,0.0,vector.jl,97
+0,0.0,vector.jl,96
 0,0.0,vector.jl,95
+0,0.0,vector.jl,94
 0,0.0,vector.jl,93
 0,0.0,vector.jl,92
 0,0.0,vector.jl,91
 0,0.0,vector.jl,90
 0,0.0,vector.jl,86
 0,0.0,vector.jl,85
-0,0.0,vector.jl,77
 0,0.0,vector.jl,32
 0,0.0,vector.jl,31
 0,0.0,vector.jl,30
@@ -34,12 +35,12 @@ bytes,ratio (%),filename: [C:\Users\jeanf\.julia\packages\PatternFolds\KzXjV\src
 0,0.0,immutable_vector.jl,48
 0,0.0,immutable_vector.jl,46
 0,0.0,immutable_vector.jl,35
+0,0.0,immutable_vector.jl,34
 0,0.0,immutable_vector.jl,33
+0,0.0,immutable_vector.jl,32
 0,0.0,immutable_vector.jl,31
 0,0.0,immutable_vector.jl,30
 0,0.0,immutable_vector.jl,29
 0,0.0,immutable_vector.jl,26
 0,0.0,immutable_vector.jl,25
 0,0.0,immutable_vector.jl,24
-0,0.0,common.jl,117
-0,0.0,common.jl,116
