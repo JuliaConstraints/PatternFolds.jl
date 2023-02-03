@@ -7,6 +7,7 @@ using Reexport
 @reexport using Intervals
 using Lazy
 using Random
+using TestItems
 
 # exports
 export IntervalsFold

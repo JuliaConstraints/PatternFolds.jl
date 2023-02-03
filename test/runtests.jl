@@ -1,7 +1,3 @@
-using PatternFolds
-using Test
+using TestItemRunner
 
-@testset "PatternFolds.jl" begin
-    include("vector.jl")
-    include("intervals.jl")
-end
+@run_package_tests
