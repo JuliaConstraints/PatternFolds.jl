@@ -15,6 +15,7 @@ TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
 Intervals = "1"
 Lazy = "0.15"
 Reexport = "1"
+TestItemRunner = "0.2"
 TestItems = "0.1"
 julia = "1.6"
 
