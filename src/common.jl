@@ -79,7 +79,7 @@ function fold(v::V, depth = 0; kind = :mutable) where {T <: Real, V <: AbstractV
     for i in 1:(l ÷ 2)
         gap = v[i + 1] - v[1]
         fold, r = divrem(l, i)
-        if  r == 0 && check_pattern(v, i, gap, fold)
+        if r == 0 && check_pattern(v, i, gap, fold)
             # return VectorFold(fold(v[1:i], depth + 1), gap, fold)
             return make_vector_fold(v[1:i], gap, fold, kind)
         end
@@ -102,7 +102,7 @@ end
 function make_vector_fold(isf; kind = :mutable)
     vf = kind == :mutable ? "VectorFold" : "IVectorFold"
     str = "The pattern of the interval is not a point." *
-        " The IntervalsFold cannot be converted to a $vf"
+          " The IntervalsFold cannot be converted to a $vf"
     @assert is_points(isf) str
 
     return make_vector_fold([value(pattern(isf), :a)], gap(isf), folds(isf), kind)
