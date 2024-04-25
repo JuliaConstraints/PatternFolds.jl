@@ -3,7 +3,7 @@
 
 Base.ndims(::Interval) = 1
 
-function Base.rand(i::Interval{T,L,R}) where {T,L,R}
+function Base.rand(i::Interval{T, L, R}) where {T, L, R}
     # α = max(_minfloat(T), first(i))
     # β = min(_maxfloat(T), last(i))
     μ = maxintfloat(T, Int)
@@ -12,7 +12,7 @@ function Base.rand(i::Interval{T,L,R}) where {T,L,R}
     δ = β - α
     # if δ === Inf
     if δ > μ
-        return rand(rand() < 0.5 ? α..zero(T) : zero(T)..β)
+        return rand(rand() < 0.5 ? α .. zero(T) : zero(T) .. β)
     else
         # r = α + exp10(log10(δ) * rand())
         r = α + δ * rand()
@@ -22,14 +22,14 @@ function Base.rand(i::Interval{T,L,R}) where {T,L,R}
 end
 
 # TODO - Optimise the type of Intervals.Bound (currently abstract super type)
-mutable struct IntervalsFold{T<:AbstractFloat,L<:Intervals.Bound,R<:Intervals.Bound}
-    pattern::Interval{T,L,R}
+mutable struct IntervalsFold{T <: AbstractFloat, L <: Intervals.Bound, R <: Intervals.Bound}
+    pattern::Interval{T, L, R}
     gap::T
     folds::Int
     current::Int
 end
 
-IntervalsFold(p, g, f, c=1) = IntervalsFold(p, g, f, c)
+IntervalsFold(p, g, f, c = 1) = IntervalsFold(p, g, f, c)
 
 @forward IntervalsFold.pattern Base.isempty, Base.ndims
 
@@ -42,16 +42,16 @@ function pattern(isf::IntervalsFold)
     return isf.pattern + (-distortion)
 end
 
-function unfold(isf::IntervalsFold{T,L,R}) where {T,L,R}
+function unfold(isf::IntervalsFold{T, L, R}) where {T, L, R}
     reset_pattern!(isf)
     x = first(pattern(isf))
     y = last(pattern(isf))
     g = gap(isf)
     f = folds(isf)
-    return [Interval{T,L,R}(x + g * i, y + g * i) for i in 0:(f - 1)]
+    return [Interval{T, L, R}(x + g * i, y + g * i) for i in 0:(f - 1)]
 end
 
-function set_fold!(isf::IntervalsFold, new_fold=isf.current + 1)
+function set_fold!(isf::IntervalsFold, new_fold = isf.current + 1)
     if new_fold != isf.current && 0 < new_fold ≤ isf.folds
         distortion = gap(isf) * (new_fold - isf.current)
         isf.pattern += distortion
@@ -78,7 +78,7 @@ end
 
 # Reverse iterate method
 function Base.iterate(
-    r_iter::Base.Iterators.Reverse{<:IntervalsFold}, state::Int=length(r_iter.itr)
+        r_iter::Base.Iterators.Reverse{<:IntervalsFold}, state::Int = length(r_iter.itr)
 )
     state < 1 && return nothing
     iter = r_iter.itr
@@ -96,7 +96,7 @@ Base.size(isf::IntervalsFold) = span(isf.pattern) * folds(isf)
 
 Base.length(isf::IntervalsFold) = folds(isf)
 
-Base.eltype(::Type{<:IntervalsFold{T,L,R}}) where {T,L,R} = Interval{T,L,R}
+Base.eltype(::Type{<:IntervalsFold{T, L, R}}) where {T, L, R} = Interval{T, L, R}
 
 is_points(isf) = is_point(pattern(isf))
 
@@ -123,21 +123,21 @@ function Base.rand(v::V) where {V <: Set{<:IntervalsFold}}
 end
 
 @testitem "IntervalsFold" tags=[:intervals] begin
-    i01 = Interval{Open,Closed}(0.0, 1.0)
-    i23 = Interval{Open,Closed}(2.0, 3.0)
-    i45 = Interval{Open,Closed}(4.0, 5.0)
-    i67 = Interval{Open,Closed}(6.0, 7.0)
-    i89 = Interval{Open,Closed}(8.0, 9.0)
+    i01 = Interval{Open, Closed}(0.0, 1.0)
+    i23 = Interval{Open, Closed}(2.0, 3.0)
+    i45 = Interval{Open, Closed}(4.0, 5.0)
+    i67 = Interval{Open, Closed}(6.0, 7.0)
+    i89 = Interval{Open, Closed}(8.0, 9.0)
     isf_dict = Dict([
         IntervalsFold(i01, 2.0, 5) => Dict(
-            :pattern => i01,
-            :gap => 2.0,
-            :folds => 5,
-            :length => 5,
-            :size => 5.0,
-            :unfold => [i01, i23, i45, i67, i89],
-            :reverse => reverse([i01, i23, i45, i67, i89]),
-        ),
+        :pattern => i01,
+        :gap => 2.0,
+        :folds => 5,
+        :length => 5,
+        :size => 5.0,
+        :unfold => [i01, i23, i45, i67, i89],
+        :reverse => reverse([i01, i23, i45, i67, i89])
+    )
     ])
 
     for (isf, results) in isf_dict

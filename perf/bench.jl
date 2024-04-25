@@ -7,7 +7,7 @@ target = PatternFolds
 
 function bench() # 0.2.x
     # Intervals
-    itv = Interval{Open,Closed}(0.0, 1.0)
+    itv = Interval{Open, Closed}(0.0, 1.0)
     i = IntervalsFold(itv, 2.0, 1000)
 
     unfold(i)
@@ -52,7 +52,7 @@ end
 #     return nothing
 # end
 
-t = @benchmark bench() evals = 1 samples = 1000 seconds = 3600
+t = @benchmark bench() evals=1 samples=1000 seconds=3600
 
 # Actual call to PerfChecker
-store_benchmark(t, target; path=@__DIR__)
+store_benchmark(t, target; path = @__DIR__)

@@ -15,7 +15,7 @@ using PatternFolds
 
     function alloc() # 0.2.x
         # Intervals
-        itv = Interval{Open,Closed}(0.0, 1.0)
+        itv = Interval{Open, Closed}(0.0, 1.0)
         i = IntervalsFold(itv, 2.0, 1000)
 
         @info "Checking IntervalsFold" i pattern(i) gap(i) folds(i) size(i) length(i)
@@ -62,5 +62,5 @@ using PatternFolds
     # end
 
     # Actual call to PerfChecker
-    alloc_check(title, dependencies, targets, alloc, alloc; path=@__DIR__)
+    alloc_check(title, dependencies, targets, alloc, alloc; path = @__DIR__)
 end
