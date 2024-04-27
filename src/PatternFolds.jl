@@ -6,8 +6,9 @@ using Reexport
 # Import
 @reexport using Intervals
 using Lazy
-using Random
+# using Random
 using TestItems
+using TestItemRunner
 
 # exports
 export IntervalsFold

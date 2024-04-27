@@ -109,7 +109,8 @@ function Base.rand(isf::IntervalsFold)
 end
 
 """
-    Base.rand(::Vector{IntervalsFold})
+	Base.rand(::Vector{IntervalsFold})
+
 Extend the `Base.rand` function to `Vector{IntervalsFold}`.
 """
 function Base.rand(v::V) where {V <: Set{<:IntervalsFold}}

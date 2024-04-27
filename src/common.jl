@@ -24,7 +24,7 @@ PatternFold = Union{AbstractVectorFold, IntervalsFold}
 
 """
     pattern(<:PatternFold)
-Return the *pattern* of any `PatternFold`. The pattern defines the occurences of the first fold.
+Return the *pattern* of any `PatternFold`. The pattern defines the occurrences of the first fold.
 """
 pattern(pf) = pf.pattern
 
