@@ -1,6 +1,7 @@
+using Test
 using TestItemRunner
-using PatternFolds
 
-include("Aqua.jl")
-
-@run_package_tests
+@testset "Package tests: PatternFolds" begin
+	include("Aqua.jl")
+	include("TestItemRunner.jl")
+end
