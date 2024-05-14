@@ -1,7 +1,7 @@
 name = "PatternFolds"
 uuid = "c18a7f1d-76ad-4ce4-950d-5419b888513b"
 authors = ["Jean-Francois Baffier"]
-version = "0.2.3"
+version = "0.2.4"
 
 [deps]
 Intervals = "d8418881-c3e1-53bb-8760-2df7ec849ed5"
