@@ -16,7 +16,7 @@ Intervals = "1"
 Lazy = "0.15"
 Reexport = "1"
 TestItemRunner = "0.2"
-TestItems = "0.1"
+TestItems = "0.1, 1"
 julia = "1.6"
 
 [extras]
