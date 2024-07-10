@@ -6,7 +6,6 @@ DocMeta.setdocmeta!(PatternFolds, :DocTestSetup, :(using PatternFolds); recursiv
 makedocs(;
     modules = [PatternFolds],
     authors = "Jean-Francois Baffier",
-    repo = "https://github.com/Humans-of-Julia/PatternFolds.jl/blob/{commit}{path}#{line}",
     sitename = "PatternFolds.jl",
     format = Documenter.HTML(;
         prettyurls = get(ENV, "CI", "false") == "true",
