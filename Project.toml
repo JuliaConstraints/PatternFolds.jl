@@ -1,7 +1,7 @@
 name = "PatternFolds"
 uuid = "c18a7f1d-76ad-4ce4-950d-5419b888513b"
 authors = ["Jean-Francois Baffier"]
-version = "0.2.4"
+version = "0.2.5"
 
 [deps]
 Intervals = "d8418881-c3e1-53bb-8760-2df7ec849ed5"
@@ -15,8 +15,8 @@ TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
 Intervals = "1"
 Lazy = "0.15"
 Reexport = "1"
-TestItemRunner = "0.2"
-TestItems = "0.1"
+TestItemRunner = "0.2, 1"
+TestItems = "0.1, 1"
 julia = "1.6"
 
 [extras]
