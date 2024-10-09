@@ -1,14 +1,9 @@
 module PatternFolds
 
-# Reexporr
-using Reexport
-
 # Import
-@reexport using Intervals
-using Lazy
-# using Random
-using TestItems
-using TestItemRunner
+import Intervals: Intervals, Interval, span, Open, Closed
+import Lazy: @forward
+import TestItems: @testitem
 
 # exports
 export IntervalsFold

@@ -12,7 +12,8 @@ function Base.rand(i::Interval{T, L, R}) where {T, L, R}
     δ = β - α
     # if δ === Inf
     if δ > μ
-        return rand(rand() < 0.5 ? α .. zero(T) : zero(T) .. β)
+        return rand(rand() < 0.5 ? Interval{T, Closed, Closed}(α, zero(T)) :
+                    Interval{T, Closed, Closed}(zero(T), β))
     else
         # r = α + exp10(log10(δ) * rand())
         r = α + δ * rand()
@@ -30,8 +31,6 @@ mutable struct IntervalsFold{T <: AbstractFloat, L <: Intervals.Bound, R <: Inte
 end
 
 IntervalsFold(p, g, f, c = 1) = IntervalsFold(p, g, f, c)
-
-@forward IntervalsFold.pattern Base.isempty, Base.ndims
 
 Base.lastindex(isf::IntervalsFold) = folds(isf)
 
@@ -98,6 +97,10 @@ Base.length(isf::IntervalsFold) = folds(isf)
 
 Base.eltype(::Type{<:IntervalsFold{T, L, R}}) where {T, L, R} = Interval{T, L, R}
 
+is_point(i::Interval) = first(i) == last(i) !== nothing
+
+value(isf::IntervalsFold) = pattern(isf) |> first
+
 is_points(isf) = is_point(pattern(isf))
 
 pattern_length(isf::IntervalsFold) = span(pattern(isf))
@@ -123,7 +126,11 @@ function Base.rand(v::V) where {V <: Set{<:IntervalsFold}}
     end
 end
 
-@testitem "IntervalsFold" tags=[:intervals] begin
+@testitem "IntervalsFold" tags=[:intervals] default_imports=false begin
+    using Intervals
+    using Test
+    using PatternFolds
+
     i01 = Interval{Open, Closed}(0.0, 1.0)
     i23 = Interval{Open, Closed}(2.0, 3.0)
     i45 = Interval{Open, Closed}(4.0, 5.0)
