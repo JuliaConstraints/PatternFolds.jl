@@ -1,0 +1,23 @@
+schema_version = "perfchecker-scenario-catalog/1"
+root = ".."
+
+[[scenarios]]
+source = "pattern_cases.jl"
+factory = "PatternCases.pattern"
+collectors = ["benchmark", "chairmark", "profile", "profile_alloc"]
+id = "primitive-pattern"
+implementation = "current"
+
+    [scenarios.parameters]
+    method = "current"
+    n = 1000
+[[scenarios]]
+source = "pattern_cases.jl"
+factory = "PatternCases.pattern"
+collectors = ["benchmark", "chairmark"]
+id = "primitive-pattern"
+implementation = "original"
+
+    [scenarios.parameters]
+    method = "original"
+    n = 1000

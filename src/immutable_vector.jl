@@ -75,11 +75,31 @@ end
 # Folding a vector to give a suitable VectorFold
 check_pattern(v, w, gap) = all(i -> i == gap, w - v)
 
+const _PatternScalar = Union{Bool, Int8, Int16, Int32, Int64, Int128,
+    UInt8, UInt16, UInt32, UInt64, UInt128, Float16, Float32, Float64}
+
+function check_pattern(v::StridedVector{T}, w::StridedVector{T},
+        gap::_PatternScalar) where {T<:_PatternScalar}
+    # Use the subtraction operator's original dimension check, then compare
+    # primitive scalar differences without materializing their vector.
+    Base.promote_shape(w, v)
+    return all(index -> w[index] - v[index] == gap, eachindex(v, w))
+end
+
 function check_pattern(v, i, gap, fold)
     for j in 1:(fold - 1)
         v_start, v_end = (j - 1) * i + 1, j * i
         w_start, w_end = j * i + 1, (j + 1) * i
         !check_pattern(v[v_start:v_end], v[w_start:w_end], gap) && return false
+    end
+    return true
+end
+
+function check_pattern(v::Vector{T}, i, gap::_PatternScalar, fold) where {T<:_PatternScalar}
+    for j in 1:(fold - 1)
+        v_start, v_end = (j - 1) * i + 1, j * i
+        w_start, w_end = j * i + 1, (j + 1) * i
+        @views check_pattern(v[v_start:v_end], v[w_start:w_end], gap) || return false
     end
     return true
 end
