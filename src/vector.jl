@@ -21,6 +21,15 @@ end
 
 pattern(mvf::VectorFold, index) = pattern(mvf)[index]
 
+function pattern(mvf::VectorFold{T, Vector{T}}, index::Int) where {T<:_PatternScalar}
+    distortion = gap(mvf) * (mvf.current - 1)
+    if distortion isa _PatternScalar && checkbounds(Bool, mvf.pattern, index)
+        return mvf.pattern[index] - distortion
+    end
+    # Retain eager subtraction for invalid indices and custom accessor results.
+    return (mvf.pattern .- distortion)[index]
+end
+
 """
     set_fold!(mvf::VectorFold, new_fold = mvf.current + 1)
 Set the *unfolded* pattern to `new_fold`. By default move the next *fold* after `current`.

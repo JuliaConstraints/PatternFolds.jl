@@ -1,0 +1,634 @@
+allocation_findings = "AllocCheck reports four possible vector/memory allocations per primitive type from eager broadcast fallback at src/vector.jl:30. Prepared valid reads allocate zero bytes in both timing collectors and GC samples. Invalid indices deliberately retain full adjusted-vector error payloads; custom accessor results keep eager evaluation. This is not a universal allocation-free claim."
+recorded_utc = "2026-10-09T00:43:05.539"
+cn_commit = "84838810398433d93db9817eef8a6c0c9bd5148b"
+case_sha256 = "c9ef153b4ce562a514934773ebbfbd6fc27e623d9e246d3f9829416b9c23d641"
+cleanup = "No helper scripts, copied environments, raw heap snapshots, logs, reports or backups persisted. Only intrinsic source, regression test, reusable profiling cases/catalog and this qualification record remain."
+catalog_sha256 = "c7387afe432b0cb30717da71e79d3ba14ab892f57f73ae8c9da9223e678a7d45"
+baseline_commit = "440a087e85350e23e8efb6b6dbe449ed891549ef"
+test_sha256 = "4e2fcae708bacd5f998b3eb9d4e93bbb1d4205e409635a63866bf03a76eecaf7"
+contract = "For mutable folds backed by dense primitive vectors and a machine-Int index, compute the accessor's distortion first. If the distortion is primitive and the index valid, subtract it from only the selected scalar. Invalid indices and nonprimitive accessor results retain eager full-vector subtraction; all other vector/value/index types keep their original generic method."
+analyzer_record_scope = "Findings retain rule/severity/location/first-line summaries; GC and memory samples are compacted to min/max values. Full initial diagnostic stdout exceeded output capacity, so all eight analyzers were rerun with compact records. No truncated record is used."
+julia_threads = 2
+ownership = "No backing-vector or fold-pointer mutation added. Gap accessor is called once, before bounds/value access; custom accessor side effects and custom subtraction's eager callback order preserved. Invalid-index BoundsError retains the adjusted vector and original index payload."
+collector_harness_correction = "An initial wrapper incorrectly read measurement definitions from bundle.manifest; corrected it to pair bundles with the documented collector order and reran all cases. Only complete corrected evidence is retained."
+cpu_affinity = [4, 6]
+constraintdomains_commit = "19b4b9082ac3588e417d0c711f961dd5008e8653"
+reference = "The original public VectorFold scalar getter selected explicitly via invoke, retaining its materialized adjusted-vector behavior."
+bank_scope = "Exact W4/W2/W52 schema hashes and saved weights; immutable zero-field decoders; independent scalar and atomic pair-count outputs, unchanged bank bytes."
+blas_threads = 1
+baseline_vector_source_sha256 = "722b679ce80b6523493749c5a775935eb1b7c4c323c6e38b4fb1785bc09a1348"
+matched_scope = "Same-process original/current/current/original order for integer and Float64 folds of widths 1/10/1000, current=2, 100 BenchmarkTools samples, evals=1. Getter result preparation and verification outside the measured operation; no training or native solver execution."
+runtime = "1.13.1"
+gc_threads = 1
+compatibility_scope = "Executed on Julia 1.13.1; no Julia 1.12 runtime claim. Existing package compat metadata unchanged."
+bank_sha256 = "4df0b409d303d1b666a2d0aba3367c1dc08a2b380da109e50dee83b042b8ea90"
+constraintcommons_commit = "54ee23d9f2a41fbcb674937c558de181b84e6d5d"
+source_sha256 = "bf7fea37bc7d71d89dfcfa7f965920596247933ace82481c76a3e753ed08b002"
+timing_limitations = "Operational timings with other night jobs active; no controlled elapsed-time or scaling claim."
+
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "benchmark"
+message = ""
+implementation = "integer-current"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.5e-8
+    maximum = 5.52e-7
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 0
+    maximum = 0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 0
+    maximum = 0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "chairmark"
+message = ""
+implementation = "integer-current"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.2e-8
+    maximum = 3.8300000000000003e-7
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 0.0
+    maximum = 0.0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 0.0
+    maximum = 0.0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "profile"
+message = ""
+implementation = "integer-current"
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "profile_alloc"
+message = ""
+implementation = "integer-current"
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "benchmark"
+message = ""
+implementation = "integer-original"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 4.55e-7
+    maximum = 1.224e-6
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 3
+    maximum = 3
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 8072
+    maximum = 8072
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "chairmark"
+message = ""
+implementation = "integer-original"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.9800000000000004e-7
+    maximum = 7.36e-7
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 3.0
+    maximum = 3.0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 8072.0
+    maximum = 8072.0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "benchmark"
+message = ""
+implementation = "float-current"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 2.8e-8
+    maximum = 6.82e-7
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 0
+    maximum = 0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 0
+    maximum = 0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "chairmark"
+message = ""
+implementation = "float-current"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 2.8000000000000003e-8
+    maximum = 4.33e-7
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 0.0
+    maximum = 0.0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 0.0
+    maximum = 0.0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "profile"
+message = ""
+implementation = "float-current"
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "profile_alloc"
+message = ""
+implementation = "float-current"
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "benchmark"
+message = ""
+implementation = "float-original"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 4.58e-7
+    maximum = 1.557e-6
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 3
+    maximum = 3
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 8072
+    maximum = 8072
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "chairmark"
+message = ""
+implementation = "float-original"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 2.8e-7
+    maximum = 7.71e-7
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 3.0
+    maximum = 3.0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 8072.0
+    maximum = 8072.0
+
+[[analyzers]]
+findings = []
+correctness = "passed"
+summary = ""
+status = "complete"
+findings_count = 0
+analysis_scope = "operation specialized for prepared state type; synchronization excluded"
+tool = "jet"
+implementation = "integer-current"
+quality = "not_checked"
+[[analyzers]]
+correctness = "passed"
+summary = ""
+status = "complete"
+findings_count = 4
+analysis_scope = "static operation specialization; tool exception-path defaults; not a universal allocation guarantee"
+tool = "alloccheck"
+implementation = "integer-current"
+quality = "not_checked"
+
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Vector{Int64} in ./boot.jl:649"
+
+        [analyzers.findings.location]
+        line = 649
+        file = "./boot.jl"
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Memory{Int64} in ./boot.jl:588"
+
+        [analyzers.findings.location]
+        line = 588
+        file = "./boot.jl"
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Vector{Int64} in ./array.jl:386"
+
+        [analyzers.findings.location]
+        line = 386
+        file = "./array.jl"
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Memory{Int64} in ./boot.jl:588"
+
+        [analyzers.findings.location]
+        line = 588
+        file = "./boot.jl"
+[[analyzers]]
+tool = "gc"
+findings = []
+correctness = "passed"
+findings_count = 0
+implementation = "integer-current"
+quality = "not_checked"
+summary = "5 operations: 0.0 ms in GC, 0 allocated bytes in total. Diagnostic counters are process-wide."
+status = "complete"
+analysis_scope = "warmed operation and synchronization; fresh state; preparation, verification and cleanup excluded"
+limitations = ["Diagnostic instrumentation is separate from baseline timing.", "GC counters are process-wide and can include concurrently running tasks.", "No observed collection is not evidence that the workload never triggers GC."]
+
+    [analyzers.measurements]
+    samples = 5
+
+        [analyzers.measurements.gc_seconds]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.compile_time]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.full_sweep]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.pause]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.allocated_bytes]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.recompile_time]
+        minimum = 0.0
+        maximum = 0.0
+[[analyzers]]
+findings = []
+correctness = "passed"
+summary = "5 operations: reachable state changed by 0 to 0 bytes. Growth may be intended output or a cache; it does not establish a leak."
+status = "complete"
+findings_count = 0
+tool = "memory"
+implementation = "integer-current"
+quality = "not_checked"
+limitations = ["Reachable state growth may be an intended result or cache, not a leak.", "Process memory includes Julia, allocator retention and unrelated tasks; two points do not measure an operation peak.", "State and result are traversed together to avoid double-counting shared Julia objects; native/device allocations require their own provider."]
+
+    [analyzers.measurements]
+    samples = 5
+
+        [analyzers.measurements.state_before_bytes]
+        minimum = 8088
+        maximum = 8088
+
+        [analyzers.measurements.state_after_bytes]
+        minimum = 8088
+        maximum = 8088
+
+        [analyzers.measurements.state_and_result_bytes]
+        minimum = 8096
+        maximum = 8096
+[[analyzers]]
+findings = []
+correctness = "passed"
+summary = ""
+status = "complete"
+findings_count = 0
+analysis_scope = "operation specialized for prepared state type; synchronization excluded"
+tool = "jet"
+implementation = "float-current"
+quality = "not_checked"
+[[analyzers]]
+correctness = "passed"
+summary = ""
+status = "complete"
+findings_count = 4
+analysis_scope = "static operation specialization; tool exception-path defaults; not a universal allocation guarantee"
+tool = "alloccheck"
+implementation = "float-current"
+quality = "not_checked"
+
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Vector{Float64} in ./boot.jl:649"
+
+        [analyzers.findings.location]
+        line = 649
+        file = "./boot.jl"
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Memory{Float64} in ./boot.jl:588"
+
+        [analyzers.findings.location]
+        line = 588
+        file = "./boot.jl"
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Vector{Float64} in ./array.jl:386"
+
+        [analyzers.findings.location]
+        line = 386
+        file = "./array.jl"
+    [[analyzers.findings]]
+    severity = "warning"
+    rule_id = "allocation.potential"
+    first_line = "Allocation of Memory{Float64} in ./boot.jl:588"
+
+        [analyzers.findings.location]
+        line = 588
+        file = "./boot.jl"
+[[analyzers]]
+tool = "gc"
+findings = []
+correctness = "passed"
+findings_count = 0
+implementation = "float-current"
+quality = "not_checked"
+summary = "5 operations: 0.0 ms in GC, 0 allocated bytes in total. Diagnostic counters are process-wide."
+status = "complete"
+analysis_scope = "warmed operation and synchronization; fresh state; preparation, verification and cleanup excluded"
+limitations = ["Diagnostic instrumentation is separate from baseline timing.", "GC counters are process-wide and can include concurrently running tasks.", "No observed collection is not evidence that the workload never triggers GC."]
+
+    [analyzers.measurements]
+    samples = 5
+
+        [analyzers.measurements.gc_seconds]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.compile_time]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.full_sweep]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.pause]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.allocated_bytes]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.recompile_time]
+        minimum = 0.0
+        maximum = 0.0
+[[analyzers]]
+findings = []
+correctness = "passed"
+summary = "5 operations: reachable state changed by 0 to 0 bytes. Growth may be intended output or a cache; it does not establish a leak."
+status = "complete"
+findings_count = 0
+tool = "memory"
+implementation = "float-current"
+quality = "not_checked"
+limitations = ["Reachable state growth may be an intended result or cache, not a leak.", "Process memory includes Julia, allocator retention and unrelated tasks; two points do not measure an operation peak.", "State and result are traversed together to avoid double-counting shared Julia objects; native/device allocations require their own provider."]
+
+    [analyzers.measurements]
+    samples = 5
+
+        [analyzers.measurements.state_before_bytes]
+        minimum = 8088
+        maximum = 8088
+
+        [analyzers.measurements.state_after_bytes]
+        minimum = 8088
+        maximum = 8088
+
+        [analyzers.measurements.state_and_result_bytes]
+        minimum = 8096
+        maximum = 8096
+
+[tests]
+temporary_accessor_method_removed = true
+cn_evaluator_arithmetic_assertions = 4872
+new_scalar_assertions = 35762
+iteration_coverage = "Original first-step getter after resetting a mutable fold, followed by paired full iteration on integer/float folds with widths 1/2/5 and current states 1/2/4; values, iterator states, fold pointer and shifted backing pattern agree."
+exact_bank_assertions = 29
+accessor_order_assertions = 104
+random_floating_coverage = "600 independent random bit-pattern vectors of length 33 and random Float16/32/64 gaps, with five valid/invalid indices each and current pointers including large and extreme machine integers; bitwise result and error payload comparisons."
+generic_coverage = "BigInt, BigFloat, rationals, Int32/UInt/Cartesian/range/vector/colon/Bool indices, empty patterns, custom observed vectors with mutating reads; original eager semantics preserved."
+full_patternfolds_assertions = 55411
+accessor_coverage = "A live specialized accessor mutates current/backing state, resizes the dense pattern, or returns a custom distortion whose subtraction mutates the backing vector. Single accessor call, all eager subtraction callbacks and invalid-error payload agree with the original getter; temporary method deleted in finally."
+constraintdomains_assertions = 99
+primitive_boundary_coverage = "All fourteen primitive scalar types in the existing pattern union; overflow extremes, signed zeros, infinities, distinct NaN payloads, subnormals; current pointers -2/0/1/2/5 and valid/invalid indices; exact value type, floating bytes, error-array/index payload, unchanged backing storage and current pointer."
+
+[[matched_measurements]]
+variant = "baseline"
+bytes = 64
+type = "Int64"
+width = 1
+minimum_ns = 21.0
+allocations = 2
+[[matched_measurements]]
+variant = "current"
+bytes = 0
+type = "Int64"
+width = 1
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "current-repeat"
+bytes = 0
+type = "Int64"
+width = 1
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "baseline-repeat"
+bytes = 64
+type = "Int64"
+width = 1
+minimum_ns = 22.0
+allocations = 2
+[[matched_measurements]]
+variant = "baseline"
+bytes = 144
+type = "Int64"
+width = 10
+minimum_ns = 22.0
+allocations = 2
+[[matched_measurements]]
+variant = "current"
+bytes = 0
+type = "Int64"
+width = 10
+minimum_ns = 13.0
+allocations = 0
+[[matched_measurements]]
+variant = "current-repeat"
+bytes = 0
+type = "Int64"
+width = 10
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "baseline-repeat"
+bytes = 144
+type = "Int64"
+width = 10
+minimum_ns = 23.0
+allocations = 2
+[[matched_measurements]]
+variant = "baseline"
+bytes = 8072
+type = "Int64"
+width = 1000
+minimum_ns = 349.0
+allocations = 3
+[[matched_measurements]]
+variant = "current"
+bytes = 0
+type = "Int64"
+width = 1000
+minimum_ns = 13.0
+allocations = 0
+[[matched_measurements]]
+variant = "current-repeat"
+bytes = 0
+type = "Int64"
+width = 1000
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "baseline-repeat"
+bytes = 8072
+type = "Int64"
+width = 1000
+minimum_ns = 361.0
+allocations = 3
+[[matched_measurements]]
+variant = "baseline"
+bytes = 64
+type = "Float64"
+width = 1
+minimum_ns = 21.0
+allocations = 2
+[[matched_measurements]]
+variant = "current"
+bytes = 0
+type = "Float64"
+width = 1
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "current-repeat"
+bytes = 0
+type = "Float64"
+width = 1
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "baseline-repeat"
+bytes = 64
+type = "Float64"
+width = 1
+minimum_ns = 22.0
+allocations = 2
+[[matched_measurements]]
+variant = "baseline"
+bytes = 144
+type = "Float64"
+width = 10
+minimum_ns = 28.0
+allocations = 2
+[[matched_measurements]]
+variant = "current"
+bytes = 0
+type = "Float64"
+width = 10
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "current-repeat"
+bytes = 0
+type = "Float64"
+width = 10
+minimum_ns = 13.0
+allocations = 0
+[[matched_measurements]]
+variant = "baseline-repeat"
+bytes = 144
+type = "Float64"
+width = 10
+minimum_ns = 27.0
+allocations = 2
+[[matched_measurements]]
+variant = "baseline"
+bytes = 8072
+type = "Float64"
+width = 1000
+minimum_ns = 610.0
+allocations = 3
+[[matched_measurements]]
+variant = "current"
+bytes = 0
+type = "Float64"
+width = 1000
+minimum_ns = 17.0
+allocations = 0
+[[matched_measurements]]
+variant = "current-repeat"
+bytes = 0
+type = "Float64"
+width = 1000
+minimum_ns = 14.0
+allocations = 0
+[[matched_measurements]]
+variant = "baseline-repeat"
+bytes = 8072
+type = "Float64"
+width = 1000
+minimum_ns = 390.0
+allocations = 3

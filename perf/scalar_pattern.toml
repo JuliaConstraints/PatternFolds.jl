@@ -1,0 +1,46 @@
+schema_version = "perfchecker-scenario-catalog/1"
+root = ".."
+
+[[scenarios]]
+id = "mutable-pattern-scalar-read"
+source = "pattern_cases.jl"
+factory = "PatternCases.mutable_scalar"
+implementation = "integer-current"
+collectors = ["benchmark", "chairmark", "profile", "profile_alloc"]
+[scenarios.parameters]
+n = 1000
+type = "integer"
+method = "current"
+
+[[scenarios]]
+id = "mutable-pattern-scalar-read"
+source = "pattern_cases.jl"
+factory = "PatternCases.mutable_scalar"
+implementation = "integer-original"
+collectors = ["benchmark", "chairmark"]
+[scenarios.parameters]
+n = 1000
+type = "integer"
+method = "original"
+
+[[scenarios]]
+id = "mutable-pattern-scalar-read"
+source = "pattern_cases.jl"
+factory = "PatternCases.mutable_scalar"
+implementation = "float-current"
+collectors = ["benchmark", "chairmark", "profile", "profile_alloc"]
+[scenarios.parameters]
+n = 1000
+type = "float"
+method = "current"
+
+[[scenarios]]
+id = "mutable-pattern-scalar-read"
+source = "pattern_cases.jl"
+factory = "PatternCases.mutable_scalar"
+implementation = "float-original"
+collectors = ["benchmark", "chairmark"]
+[scenarios.parameters]
+n = 1000
+type = "float"
+method = "original"
