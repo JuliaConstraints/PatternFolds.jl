@@ -1,0 +1,246 @@
+diagnostic_manifest_sha256 = "10b7ae47f6bef299009e6dca7075b75f3bca4e77bb1c9c21b83dd84fe2de1c1e"
+recorded_utc = "2026-10-09T01:05:20.172"
+cn_commit = "84838810398433d93db9817eef8a6c0c9bd5148b"
+case_sha256 = "c9ef153b4ce562a514934773ebbfbd6fc27e623d9e246d3f9829416b9c23d641"
+scalar_getter_scope = "The recently published scalar getter implementation is unchanged. Its native/custom accessor, value bits, exception payload and iterator-state tests are included in the full package run; its earlier separate timing records were not rerun or relabeled as new measurements."
+cleanup = "No helper scripts, worker reports, raw heaps, copied environments, logs or backups persisted. Only intrinsic source, regression tests and this qualification record added."
+catalog_sha256 = "155c1b402b3169e8698dc10b3d715e86e35c0f1ba37b6d3feb805e12ddec3fd6"
+analyzer_scope = "Four fresh native-operation specializations: JET/AllocCheck/GC/reachable memory; all complete with no findings. Five GC observations have zero allocated bytes, compilation, recompilation and GC time. State remains 8048 bytes, joint state/result 8056 bytes."
+baseline_commit = "7a43c9bb4b2a395dca75fab2a443e316c87b914e"
+baseline_source_sha256 = "66b6557074287a31abbf2f4d87c8f1a6be6296af476f934cf143c5e60eb893e5"
+test_sha256 = "38d6678302c1fc600d755a46d841862aca8084d63ce3560abc55b191ae2eb484"
+contract = "Direct scalar subtraction is permitted only for native Array/Memory storage and recursively trusted native reshapes, reinterpreted arrays, views and primitive integer selectors. Unknown parents or selectors retain original eager vector subtraction before comparisons. The four-argument view path also requires primitive integer width/repetition values; other arguments retain original arithmetic and copied slices."
+julia_threads = 2
+cpu_affinity = [4, 6]
+cc_commit = "54ee23d9f2a41fbcb674937c558de181b84e6d5d"
+integration_note = "Root-frozen V4 and shared application sources were not modified. This repair supersedes the general-library custom-storage edge case in the earlier published folding specialization."
+measurement_scope = "Prepared read-only vector 1:1000; four-argument check_pattern with width 1, gap 1, repetitions equal to length. Six fresh-process collectors. Current benchmark/chairmark observe zero bytes/objects; original copied-slice operation observes 191808 bytes and 5994 objects. Preparation and verification excluded."
+reference = "Explicit invoke of original generic check_pattern using Tuple{Any,Any,Any} or Tuple{Any,Any,Any,Any}; independently constructed input and event state for current/reference paths."
+bank_scope = "Saved W4/W2/W52 schemas, weights and independent decoded scalar/atomic outputs; original bank bytes remain unchanged; no training."
+constraintdomains_commit = "19b4b9082ac3588e417d0c711f961dd5008e8653"
+blas_threads = 1
+unchanged_scalar_getter_sha256 = "bf7fea37bc7d71d89dfcfa7f965920596247933ace82481c76a3e753ed08b002"
+correctness_repair = "Julia StridedVector includes arbitrary DenseArray subtypes. The former direct scan returned false after reading index 1, while the original eager subtraction read indices 1/2/3; a custom getter throwing at index 3 was skipped instead of reporting its ErrorException."
+runtime = "1.13.1"
+gc_threads = 1
+compatibility_scope = "Executed on Julia 1.13.1. Existing Julia 1.12 compat metadata remains unchanged; no Julia 1.12 runtime claim."
+bank_sha256 = "4df0b409d303d1b666a2d0aba3367c1dc08a2b380da109e50dee83b042b8ea90"
+source_sha256 = "719f153e42bac16522f0bfdca07e3a65aa6767927bd8def9a4b936d6080086e3"
+timing_limitations = "Operational same-input timings under concurrent overnight jobs; no controlled elapsed-time, cold-construction, solver or scaling claim."
+constraints_commit = "a399df351c5d9b0bf753c0612ea2178eee4fa4cb"
+
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "benchmark"
+message = ""
+implementation = "current"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.376e-6
+    maximum = 4.34e-6
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 0
+    maximum = 0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 0
+    maximum = 0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "chairmark"
+message = ""
+implementation = "current"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.3080000000000003e-6
+    maximum = 3.8740000000000005e-6
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 0.0
+    maximum = 0.0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 0.0
+    maximum = 0.0
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "profile"
+message = ""
+implementation = "current"
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "profile_alloc"
+message = ""
+implementation = "current"
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "benchmark"
+message = ""
+implementation = "original"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.0973e-5
+    maximum = 3.3523e-5
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 5994
+    maximum = 5994
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 191808
+    maximum = 191808
+[[collectors]]
+correctness = "passed"
+status = "complete"
+collector = "chairmark"
+message = ""
+implementation = "original"
+
+    [collectors."julia.wall.time"]
+    samples = 5
+    minimum = 3.5033e-5
+    maximum = 4.7041000000000006e-5
+
+    [collectors."julia.alloc.count"]
+    samples = 5
+    minimum = 5994.0
+    maximum = 5994.0
+
+    [collectors."julia.alloc.bytes"]
+    samples = 5
+    minimum = 191808.0
+    maximum = 191808.0
+
+[[analyzers]]
+correctness = "passed"
+summary = ""
+status = "complete"
+analysis_scope = "operation specialized for prepared state type; synchronization excluded"
+tool = "jet"
+findings_count = 0
+quality = "not_checked"
+findings = []
+
+    [analyzers.measurements]
+[[analyzers]]
+correctness = "passed"
+summary = ""
+status = "complete"
+analysis_scope = "static operation specialization; tool exception-path defaults; not a universal allocation guarantee"
+tool = "alloccheck"
+findings_count = 0
+quality = "not_checked"
+findings = []
+
+    [analyzers.measurements]
+[[analyzers]]
+limitations = ["Diagnostic instrumentation is separate from baseline timing.", "GC counters are process-wide and can include concurrently running tasks.", "No observed collection is not evidence that the workload never triggers GC."]
+correctness = "passed"
+summary = "5 operations: 0.0 ms in GC, 0 allocated bytes in total. Diagnostic counters are process-wide."
+status = "complete"
+analysis_scope = "warmed operation and synchronization; fresh state; preparation, verification and cleanup excluded"
+tool = "gc"
+findings = []
+findings_count = 0
+quality = "not_checked"
+
+    [analyzers.measurements]
+    samples = 5
+
+        [analyzers.measurements.full_sweep]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.operation_seconds]
+        minimum = 3.403e-6
+        maximum = 3.942e-6
+
+        [analyzers.measurements.lock_conflicts]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.malloc]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.gc_seconds]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.bigalloc]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.poolalloc]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.compile_time]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.allocated_bytes]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.recompile_time]
+        minimum = 0.0
+        maximum = 0.0
+
+        [analyzers.measurements.realloc]
+        minimum = 0
+        maximum = 0
+
+        [analyzers.measurements.pause]
+        minimum = 0
+        maximum = 0
+[[analyzers]]
+correctness = "passed"
+summary = "5 operations: reachable state changed by 0 to 0 bytes. Growth may be intended output or a cache; it does not establish a leak."
+status = "complete"
+findings_count = 0
+tool = "memory"
+findings = []
+quality = "not_checked"
+limitations = ["Reachable state growth may be an intended result or cache, not a leak.", "Process memory includes Julia, allocator retention and unrelated tasks; two points do not measure an operation peak.", "State and result are traversed together to avoid double-counting shared Julia objects; native/device allocations require their own provider."]
+
+    [analyzers.measurements]
+    samples = 5
+
+        [analyzers.measurements.state_before_bytes]
+        minimum = 8048
+        maximum = 8048
+
+        [analyzers.measurements.state_after_bytes]
+        minimum = 8048
+        maximum = 8048
+
+        [analyzers.measurements.state_and_result_bytes]
+        minimum = 8056
+        maximum = 8056
+
+[tests]
+full_patternfolds_assertions = 56124
+cn_evaluator_arithmetic_assertions = 4872
+focused_pattern_assertions = 19337
+custom_storage_coverage = "Custom DenseArray on either or both inputs, native views over custom dense parents and matrix-column views over custom reshaped parents; early mismatches/full matches, optional mutations and late throws at positions 2/3. Result/exception payload, complete axes/read traces and both mutated backing arrays match the original eager method."
+constraintdomains_assertions = 99
+slice_parameters = "All pairs of sixteen width values and fourteen repetition values: zero/negative/oversized/extreme machine integers, Bool/Int8/UInt, floating/nonintegral, BigInt and rational arguments. Result/exception index payload and unchanged native values agree. Custom width multiplication mutates backing storage; callback sequence, mutations and original behavior agree for six repetition counts."
+exact_bank_assertions = 29
+added_assertions = 713
+native_allocations = "Dense vectors, full views, matrix-column views, reinterpreted UInt arrays and Memory buffers retain zero allocations after warming. Existing exhaustive native pattern and scalar getter tests remain in full package run."

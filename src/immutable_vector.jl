@@ -78,8 +78,33 @@ check_pattern(v, w, gap) = all(i -> i == gap, w - v)
 const _PatternScalar = Union{Bool, Int8, Int16, Int32, Int64, Int128,
     UInt8, UInt16, UInt32, UInt64, UInt128, Float16, Float32, Float64}
 
+# StridedVector also includes custom DenseArray subtypes and custom selectors.
+# Their reads may have effects, so retain eager subtraction for those inputs.
+_pattern_native_storage(::Any) = false
+_pattern_native_storage(::Array) = true
+_pattern_native_storage(::Memory) = true
+_pattern_native_storage(values::Union{Base.ReshapedArray, Base.ReinterpretArray}) =
+    _pattern_native_storage(getfield(values, :parent))
+_pattern_native_storage(values::SubArray) =
+    _pattern_native_storage(getfield(values, :parent)) &&
+    all(_pattern_native_index, getfield(values, :indices))
+_pattern_native_storage(::Union{UnitRange{T}, Base.OneTo{T}}) where {T<:_PatternScalar} =
+    T <: Integer
+_pattern_native_storage(::StepRange{T,S}) where {T<:_PatternScalar,S<:_PatternScalar} =
+    T <: Integer && S <: Integer
+
+_pattern_native_index(::Any) = false
+_pattern_native_index(index::_PatternScalar) = index isa Integer
+_pattern_native_index(::CartesianIndex) = true
+_pattern_native_index(index::Base.Slice) =
+    _pattern_native_storage(getfield(index, :indices))
+_pattern_native_index(index::Union{UnitRange, Base.OneTo, StepRange}) =
+    _pattern_native_storage(index)
+
 function check_pattern(v::StridedVector{T}, w::StridedVector{T},
         gap::_PatternScalar) where {T<:_PatternScalar}
+    (_pattern_native_storage(v) && _pattern_native_storage(w)) ||
+        return invoke(check_pattern, Tuple{Any,Any,Any}, v, w, gap)
     # Use the subtraction operator's original dimension check, then compare
     # primitive scalar differences without materializing their vector.
     Base.promote_shape(w, v)
@@ -96,6 +121,10 @@ function check_pattern(v, i, gap, fold)
 end
 
 function check_pattern(v::Vector{T}, i, gap::_PatternScalar, fold) where {T<:_PatternScalar}
+    # Nonprimitive width/repetition arithmetic may also have custom effects.
+    (_pattern_native_index(i) && _pattern_native_index(fold) &&
+        i isa Integer && fold isa Integer) ||
+        return invoke(check_pattern, Tuple{Any,Any,Any,Any}, v, i, gap, fold)
     for j in 1:(fold - 1)
         v_start, v_end = (j - 1) * i + 1, j * i
         w_start, w_end = j * i + 1, (j + 1) * i
